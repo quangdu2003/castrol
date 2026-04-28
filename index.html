@@ -3,48 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang web của bạn</title>
+    <title>Công cụ Tra cứu Dầu nhớt</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
             background-color: #f4f4f9;
+            text-align: center;
+            padding: 20px;
         }
 
-        .btn-castrol {
-            background-color: #00882B; /* Màu xanh Castrol */
-            color: white;
-            padding: 15px 30px;
-            border: none;
+        /* Tạo một khung trông giống hệt iframe */
+        .fake-iframe {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            height: 600px;
+            margin: 0 auto;
+            border: 2px solid #ddd;
             border-radius: 8px;
-            font-size: 18px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            /* Gọi bức ảnh bạn đã chụp lên làm nền */
+            background-image: url('castrol-bg.jpg'); 
+            background-size: cover;
+            background-position: top center;
             cursor: pointer;
+        }
+
+        /* Tạo lớp phủ mờ mờ và nút bấm ảo ở giữa khung */
+        .overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4); /* Làm tối ảnh nền một chút */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        .fake-iframe:hover .overlay {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-fake {
+            background-color: #00882B;
+            color: white;
+            padding: 15px 40px;
+            font-size: 20px;
             font-weight: bold;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: 0.3s;
+            border-radius: 5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
-
-        .btn-castrol:hover {
-            background-color: #006620;
-            transform: translateY(-2px);
-        }
-
-        .note {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #666;
-        }                        
     </style>
 </head>
 <body>
-<iframe 
-    src="https://api.allorigins.win/raw?url=https://www.castrol.com/en_us/united-states/home/product-finder.html" 
-    width="100%" 
-    height="800px" 
-    style="border: none;">
-</iframe>
-   
+
+    <h2>Tìm Kiếm Dầu Nhớt Castrol Chính Hãng</h2>
+    
+    <a href="https://www.castrol.com/en_us/united-states/home/product-finder.html" target="_blank" style="text-decoration: none;">
+        <div class="fake-iframe">
+            <div class="overlay">
+                <span class="btn-fake">Bấm vào đây để bắt đầu tra cứu</span>
+            </div>
+        </div>
+    </a>
 
 </body>
 </html>
