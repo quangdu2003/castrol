@@ -34,37 +34,17 @@
             margin-top: 20px;
             font-size: 14px;
             color: #666;
-        }
+        }                        
     </style>
 </head>
 <body>
-
-    <h2>Chào mừng đến với Cửa hàng Dầu nhớt của chúng tôi</h2>
-    <p>Để tìm kiếm loại dầu nhớt phù hợp nhất cho xe của bạn, vui lòng sử dụng công cụ chính hãng dưới đây.</p>
-
-    <button class="btn-castrol" onclick="openCastrolPopup()">
-        🔍 Bật Công cụ Tra cứu Castrol
-    </button>
-    <p class="note"><i>* Công cụ sẽ hiển thị ở một cửa sổ nhỏ ngay trên màn hình này.</i></p>
-
-    <script>
-        function openCastrolPopup() {
-            // Thiết lập kích thước cửa sổ
-            var width = 900;
-            var height = 750;
-            
-            // Tính toán để cửa sổ tự động căn giữa màn hình của khách hàng
-            var left = (window.screen.width - width) / 2;
-            var top = (window.screen.height - height) / 2;
-            
-            // Mở cửa sổ Pop-up
-            window.open(
-                'https://www.castrol.com/en_us/united-states/home/product-finder.html', 
-                'CastrolFinder', 
-                'width=' + width + ', height=' + height + ', top=' + top + ', left=' + left + ', resizable=yes, scrollbars=yes, status=no, menubar=no, toolbar=no'
-            );
-        }
-    </script>
+<iframe 
+    src="https://api.allorigins.win/raw?url=https://www.castrol.com/en_us/united-states/home/product-finder.html" 
+    width="100%" 
+    height="800px" 
+    style="border: none;">
+</iframe>
+   
 
 </body>
 </html>
