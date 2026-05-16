@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title></title>
+    <title>Tra cứu Dầu nhớt</title>
+    <link rel="icon" type="image/png" href="vtm.png">
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,800&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -24,8 +25,6 @@
             --gray-700: #444444;
             --white: #FFFFFF;
             --green: #1565C0;
-            --voltronic-blue: #0054A6;
-            --voltronic-blue-dark: #003D7A;
             --font-display: 'Barlow Condensed', sans-serif;
             --font-body: 'Barlow', sans-serif;
         }
@@ -33,32 +32,44 @@
         body { font-family: var(--font-body); background: var(--gray-100); color: #111; }
 
        .site-header { 
-    background: var(--white); 
-    border-bottom: 1px solid #E5E5E5; 
-    padding: 12px 0; 
-    position: fixed; 
-    top: 0; 
-    left: 0;
-    width: 100%; 
-    z-index: 200; 
-    box-shadow: 0 1px 6px rgba(0,0,0,.08); 
-}
-        .header-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 16px; }
-        .header-logos { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
-        .header-logo-wrap { display: inline-flex; align-items: center; justify-content: center; height: 56px; flex-shrink: 0; }
-        .header-logo-wrap.castrol-wrap { width: 220px; }
-        .header-logo-wrap.valvoline-wrap { width: 200px; }
-        .header-logo-wrap.voltronic-wrap { width: 200px; }
-        .logo-divider { width: 1px; height: 36px; background: #E0E0E0; }
+            background: var(--white); 
+            border-bottom: 1px solid #E5E5E5; 
+            padding: 12px 0; 
+            position: fixed; 
+            top: 0; 
+            left: 0;
+            width: 100%; 
+            z-index: 200; 
+            box-shadow: 0 1px 6px rgba(0,0,0,.08); 
+        }
+        .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 16px; }
+        
+        /* CẬP NHẬT HEADER LOGOS: Đẩy thành 2 hàng khi thiếu chỗ */
+        .header-logos { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            gap: 16px; 
+            flex-wrap: wrap; /* Cho phép rớt dòng */
+            width: 100%;
+        }
+        .header-logo-wrap { display: inline-flex; align-items: center; justify-content: center; height: 50px; flex-shrink: 0; }
+        .header-logo-wrap.castrol-wrap { width: 140px; }
+        .header-logo-wrap.valvoline-wrap { width: 130px; }
+        .header-logo-wrap.voltronic-wrap { width: 140px; }
+        .header-logo-wrap.wolver-wrap { width: 120px; }
+        .header-logo-wrap.idemitsu-wrap { width: 120px; }
+        .header-logo-wrap.kixx-wrap { width: 80px; }
+        .logo-divider { width: 1px; height: 36px; background: #E0E0E0; flex-shrink: 0; }
         .header-logo { width: 100%; height: 100%; object-fit: contain; }
 
        .hero { 
-    margin-top: 80px;
-    background: linear-gradient(135deg, var(--hero-bg) 0%, var(--hero-bg-mid) 60%, var(--hero-bg-dark) 100%); 
-    padding: 56px 24px 0; 
-    position: relative; 
-    overflow: hidden; 
-}
+            margin-top: 74px; 
+            background: linear-gradient(135deg, var(--hero-bg) 0%, var(--hero-bg-mid) 60%, var(--hero-bg-dark) 100%); 
+            padding: 56px 24px 0; 
+            position: relative; 
+            overflow: hidden; 
+        }
         .hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='1.5' fill='rgba(255,255,255,0.06)'/%3E%3C/svg%3E"); }
         .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: flex-end; position: relative; z-index: 1; }
         .hero-text { padding-bottom: 36px; }
@@ -71,15 +82,15 @@
         .hero-oil-drop svg { width: 80px; height: 80px; opacity: .6; }
 
         .nav-scroll-outer { 
-    background: var(--nav-bg); 
-    border-bottom: 3px solid rgba(0,0,0,.25); 
-    display: flex; 
-    align-items: stretch;
-    position: relative;
-    top: 0; 
-    z-index: 10;
-    width: 100%;
-}
+            background: var(--nav-bg); 
+            border-bottom: 3px solid rgba(0,0,0,.25); 
+            display: flex; 
+            align-items: stretch;
+            position: relative; 
+            top: 0; 
+            z-index: 10;
+            width: 100%;
+        }
         .nav-arr { display: none; flex-shrink: 0; width: 38px; background: transparent; border: none; color: rgba(255,255,255,.65); cursor: pointer; align-items: center; justify-content: center; transition: color .2s, background .2s; padding: 0; position: relative; z-index: 5; -webkit-tap-highlight-color: transparent; }
         .nav-arr:hover { color: white; background: rgba(255,255,255,.09); }
         .nav-arr:active { background: rgba(255,255,255,.15); }
@@ -87,38 +98,39 @@
         .nav-arr.nav-arr-left { border-right: 1px solid rgba(255,255,255,.08); }
         .nav-arr.nav-arr-right { border-left: 1px solid rgba(255,255,255,.08); }
         .nav-arr.hidden { opacity: 0; pointer-events: none; }
-     .nav-container { 
-    flex: 1; 
-    display: flex; 
-    overflow-x: auto; 
-    overflow-y: hidden;
-    justify-content: center; 
-    scrollbar-width: none; 
-    -webkit-overflow-scrolling: touch;
-    touch-action: pan-x;
-}
+        .nav-container { 
+            flex: 1; 
+            display: flex; 
+            overflow-x: auto; 
+            overflow-y: hidden; 
+            justify-content: center; 
+            scrollbar-width: none; 
+            -webkit-overflow-scrolling: touch; 
+            touch-action: pan-x; 
+        }
         .nav-container::-webkit-scrollbar { display: none; }
-.nav-item { 
-    flex: 1; 
-    min-width: 110px;
-    max-width: 150px;
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    padding: 14px 10px; 
-    cursor: pointer; 
-    border-bottom: 4px solid transparent !important; 
-    margin-bottom: -3px; 
-    transition: all .25s; 
-    color: rgba(255,255,255,.6); 
-    font-size: 10px; 
-    font-weight: 700; 
-    letter-spacing: 1px; 
-    text-transform: uppercase; 
-    gap: 6px; 
-    font-family: var(--font-body); 
-    -webkit-tap-highlight-color: transparent; 
-}      .nav-item:hover { color: rgba(255,255,255,.9); background: rgba(255,255,255,.08); }
+        .nav-item { 
+            flex: 1; 
+            min-width: 110px; 
+            max-width: 150px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            padding: 14px 10px; 
+            cursor: pointer; 
+            border-bottom: 4px solid transparent !important; 
+            margin-bottom: -3px; 
+            transition: all .25s; 
+            color: rgba(255,255,255,.6); 
+            font-size: 10px; 
+            font-weight: 700; 
+            letter-spacing: 1px; 
+            text-transform: uppercase; 
+            gap: 6px; 
+            font-family: var(--font-body); 
+            -webkit-tap-highlight-color: transparent; 
+        }      
+        .nav-item:hover { color: rgba(255,255,255,.9); background: rgba(255,255,255,.08); }
         .nav-item.active { color: #FFFFFF !important; border-bottom: 4px solid #FFC107 !important; background: rgba(255,255,255,.1); }
         .nav-icon { width: 26px; height: 26px; }
         .nav-icon img { width: 26px; height: 26px; object-fit: contain; filter: brightness(0) invert(1); opacity: .6; }
@@ -171,73 +183,86 @@
         .reverse-results ul { margin: 8px 0 0 16px; }
         .reverse-results li { font-size: 13px; color: var(--gray-700); margin-bottom: 4px; }
         .reverse-results .rv-title { font-weight: 700; font-size: 12px; color: var(--castrol-green); text-transform: uppercase; letter-spacing: 1px; }
-        .reverse-results.valvoline-theme { border-left: 4px solid transparent !important; border-image: linear-gradient(to bottom, #E31837 15%, #003087 85%) 1 !important; }
-        .reverse-results.valvoline-theme .rv-title { background: linear-gradient(90deg, #E31837 0%, #003087 80%) !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important; color: transparent !important; }
-        .reverse-results.voltronic-theme { border-left: 4px solid var(--voltronic-blue) !important; }
-        .reverse-results.voltronic-theme .rv-title { color: var(--voltronic-blue) !important; }
 
         .results-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
         .results-title { font-family: var(--font-display); font-size: 28px; font-weight: 900; text-transform: uppercase; color: #111; letter-spacing: 1px; }
         .results-subtitle { font-size: 13px; color: var(--gray-500); margin-top: 2px; font-family: var(--font-body); }
-        .results-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+        
+        .results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch; }
 
-        .brand-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,.07); }
+        .brand-card { 
+            background: white; 
+            border-radius: 8px; 
+            overflow: hidden; 
+            box-shadow: 0 2px 16px rgba(0,0,0,.07); 
+            display: flex; 
+            flex-direction: column; 
+            height: 100%; 
+        }
+        
         .brand-card-head { padding: 14px 20px; display: flex; align-items: center; gap: 10px; }
-        .brand-card-head.castrol { background: var(--castrol-green); }
-        .brand-card-head.valvoline { background: var(--dark); }
-        .brand-card-head.voltronic { background: var(--voltronic-blue); }
         .brand-logo-badge { background: white; border-radius: 8px; width: 90px; height: 36px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 4px 8px; box-shadow: 0 1px 4px rgba(0,0,0,.15); }
         .brand-logo-badge img { max-width: 78px; max-height: 28px; object-fit: contain; display: block; }
         .brand-head-title { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 1px; }
         .brand-head-sub { font-size: 10px; color: rgba(255,255,255,.65); font-family: var(--font-body); }
-        .brand-card-body { padding: 16px; }
+        
+        .brand-card-body { padding: 16px; flex: 1; display: flex; flex-direction: column; }
 
-        .product-block { border: 1.5px solid var(--gray-200); border-radius: 10px; overflow: hidden; position: relative; margin-bottom: 10px; transition: all .2s; background: white; }
-        .product-block:hover { border-color: #C8C8C8; box-shadow: 0 4px 18px rgba(0,0,0,.09); transform: translateY(-1px); }
-        .product-block.recommended.castrol-prod { border-color: var(--castrol-green); border-width: 2px; }
-        .product-block.recommended.valvoline-prod { border-color: var(--green); border-width: 2px; }
-        .product-block.recommended.voltronic-prod { border-color: var(--voltronic-blue); border-width: 2px; }
-        .product-inner { display: flex; align-items: stretch; }
-        .product-img-wrap { width: 120px; flex-shrink: 0; border-right: 1px solid var(--gray-200); display: flex; align-items: center; justify-content: center; padding: 12px; flex-direction: column; gap: 6px; align-self: stretch; }
-        .recommend-badge { position: absolute; top: 0; left: 0; width: 120px; box-sizing: border-box; text-align: center; color: white; font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 0; border-radius: 0 0 10px 0; z-index: 2; font-family: var(--font-body); }
-        .product-img-wrap.castrol-wrap-prod { background: linear-gradient(160deg, #E8F5EE 0%, #C8E6D3 100%); }
-        .product-img-wrap.valvoline-wrap-prod { background: linear-gradient(160deg, #EEF2FF 0%, #DBEAFE 100%); }
-        .product-img-wrap.voltronic-wrap-prod { background: linear-gradient(160deg, #E3F0FF 0%, #B8D8FF 100%); }
-        .recommend-badge.castrol-badge { background: var(--castrol-green); }
-        .recommend-badge.valvoline-badge { background: var(--green); }
-        .recommend-badge.voltronic-badge { background: var(--voltronic-blue); }
-        .brand-icon-wrap { width: 80px; height: 80px; border-radius: 10px; display: flex; align-items: center; justify-content: center; overflow: hidden; background: white; box-shadow: 0 2px 8px rgba(0,0,0,.10); }
-        .brand-icon-wrap img { width: 72px; height: 72px; object-fit: contain; }
-        .brand-icon-wrap.castrol-icon { background: #F0FAF4; border: 1.5px solid #A7D9B8; }
-        .brand-icon-wrap.valvoline-icon { background: #EEF2FF; border: 1.5px solid #BFDBFE; }
-        .brand-icon-wrap.voltronic-icon { background: #E8F2FF; border: 1.5px solid #A0C8F0; }
-        .product-info { padding: 14px 16px 12px; flex: 1; display: flex; flex-direction: column; min-width: 0; }
+        .product-block { border-radius: 10px; overflow: hidden; position: relative; margin-bottom: 10px; transition: all .2s; background: white; }
+        .product-block:hover { border-color: #C8C8C8 !important; box-shadow: 0 4px 18px rgba(0,0,0,.09); transform: translateY(-1px); }
+        
+        /* CẬP NHẬT GIAO DIỆN SẢN PHẨM: Căn lề, tạo bo tròn 4 góc cho ô logo */
+        .product-inner { 
+            display: flex; 
+            align-items: center; 
+            padding: 14px 16px; 
+            gap: 16px; 
+        }
+        .product-img-wrap { 
+            width: 100px; 
+            height: 100px;
+            flex-shrink: 0; 
+            border-radius: 12px; /* Đã bo đủ 4 góc */
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+        }
+        .recommend-badge { 
+            position: absolute; 
+            top: -1px; 
+            left: -1px; 
+            width: auto; 
+            text-align: center; 
+            color: white; 
+            font-size: 9px; 
+            font-weight: 700; 
+            letter-spacing: 1.5px; 
+            text-transform: uppercase; 
+            padding: 5px 14px; 
+            border-radius: 10px 0 10px 0; /* Bo chuẩn khớp với khung ngoài */
+            z-index: 2; 
+            font-family: var(--font-body); 
+        }
+        
+        .brand-icon-wrap { width: 76px; height: 76px; border-radius: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden; background: white; box-shadow: 0 2px 8px rgba(0,0,0,.10); }
+        .brand-icon-wrap img { width: 66px; height: 66px; object-fit: contain; }
+        
+        .product-info { flex: 1; display: flex; flex-direction: column; min-width: 0; }
         .product-name { font-family: var(--font-display); font-size: 20px; font-weight: 800; color: #111; line-height: 1.05; margin-bottom: 5px; letter-spacing: .5px; text-transform: uppercase; }
-        .product-name.recommended-pad { margin-top: 18px; }
+        .product-name.recommended-pad { margin-top: 8px; }
         .product-spec { font-size: 11px; color: var(--gray-500); margin-bottom: 10px; line-height: 1.5; font-weight: 400; font-family: var(--font-body); }
         .product-cap { display: inline-flex; align-items: center; gap: 6px; background: var(--gray-100); border-radius: 6px; padding: 5px 11px; margin-bottom: 11px; width: fit-content; font-size: 11px; font-weight: 500; color: var(--gray-500); font-family: var(--font-body); }
         .product-cap strong { font-size: 17px; font-weight: 800; font-family: var(--font-display); }
-        .product-cap strong.c { color: var(--castrol-green); }
-        .product-cap strong.v { color: var(--blue); }
-        .product-cap strong.vt { color: var(--voltronic-blue); }
+        
         .btn-detail { display: inline-flex; align-items: center; gap: 7px; padding: 7px 18px; border: none; border-radius: 6px; font-family: var(--font-body); font-size: 12px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; cursor: pointer; transition: all .2s; width: fit-content; margin-top: auto; -webkit-tap-highlight-color: transparent; }
-        .btn-detail.c { background: var(--castrol-green); color: white; }
-        .btn-detail.c:hover { background: var(--castrol-green-dark); box-shadow: 0 3px 10px rgba(26,122,60,.35); }
-        .btn-detail.v { background: var(--dark); color: white; }
-        .btn-detail.v:hover { background: #002070; box-shadow: 0 3px 10px rgba(0,48,135,.3); }
-        .btn-detail.vt { background: var(--voltronic-blue); color: white; }
-        .btn-detail.vt:hover { background: var(--voltronic-blue-dark); box-shadow: 0 3px 10px rgba(0,84,166,.35); }
-        .btn-detail svg { width: 13px; height: 13px; fill: white; }
-        .alt-heading { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #AAA; padding: 10px 0 8px; font-family: var(--font-body); display: flex; align-items: center; gap: 10px; }
+        .btn-detail:hover { opacity: 0.9; box-shadow: 0 3px 10px rgba(0,0,0,.2); }
+        .alt-heading { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 10px 0 8px; font-family: var(--font-body); display: flex; align-items: center; gap: 10px; }
         .alt-heading::after { content: ''; flex: 1; height: 1px; background: var(--gray-200); }
         .no-result { text-align: center; padding: 32px; color: #BBB; font-size: 13px; font-family: var(--font-body); }
 
         .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.72); z-index: 500; display: flex; align-items: flex-start; justify-content: center; padding: 20px; overflow-y: auto; }
         .modal-box { background: white; border-radius: 14px; width: 100%; max-width: 640px; margin: 30px auto; overflow: hidden; box-shadow: 0 24px 64px rgba(0,0,0,.35); }
         .modal-topbar { padding: 0 20px; height: 56px; display: flex; align-items: center; gap: 14px; }
-        .modal-topbar.c { background: var(--castrol-green); }
-        .modal-topbar.v { background: var(--dark); }
-        .modal-topbar.vt { background: var(--voltronic-blue); }
         .modal-back { background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.3); color: white; padding: 6px 14px; border-radius: 6px; font-family: var(--font-body); font-size: 12px; font-weight: 600; cursor: pointer; letter-spacing: .5px; transition: all .2s; display: flex; align-items: center; gap: 6px; flex-shrink: 0; -webkit-tap-highlight-color: transparent; }
         .modal-back:hover { background: rgba(255,255,255,.28); }
         .modal-back svg { width: 14px; height: 14px; fill: white; }
@@ -246,14 +271,8 @@
         .modal-brand-logo { height: 28px; width: auto; max-width: 140px; object-fit: contain; }
         .modal-hero { display: flex; align-items: center; gap: 20px; padding: 22px 24px 18px; border-bottom: 1px solid var(--gray-200); }
         .modal-category-icon-wrap { width: 90px; height: 90px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border-radius: 14px; border: 2px solid; position: relative; overflow: hidden; }
-        .modal-category-icon-wrap.castrol-wrap-modal { background: linear-gradient(135deg, #E8F5EE 0%, #A7D9B8 60%); border-color: #6DBF8A; }
-        .modal-category-icon-wrap.valvoline-wrap-modal { background: linear-gradient(135deg, #EEF2FF 0%, #DBEAFE 100%); border-color: #93C5FD; }
-        .modal-category-icon-wrap.voltronic-wrap-modal { background: linear-gradient(135deg, #E3F0FF 0%, #B8D8FF 100%); border-color: #7AB8F5; }
         .modal-category-icon { width: 52px; height: 52px; object-fit: contain; opacity: 0.9; }
         .modal-brand-pill { position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%); border-radius: 4px; padding: 2px 8px; font-size: 8px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; font-family: var(--font-body); }
-        .castrol-wrap-modal .modal-brand-pill { background: rgba(26,122,60,.15); color: #1A7A3C; }
-        .valvoline-wrap-modal .modal-brand-pill { background: rgba(0,48,135,.12); color: #003087; }
-        .voltronic-wrap-modal .modal-brand-pill { background: rgba(0,84,166,.12); color: #0054A6; }
         .modal-product-name { font-family: var(--font-display); font-size: 30px; font-weight: 900; color: #111; line-height: 1; margin-bottom: 6px; letter-spacing: .5px; text-transform: uppercase; }
         .modal-vehicle-tag { display: inline-flex; align-items: center; gap: 7px; background: #FFF8E1; border: 1px solid #EDD96A; border-radius: 6px; padding: 6px 12px; font-size: 12px; font-weight: 500; color: #7A6000; font-family: var(--font-body); }
         .modal-vehicle-tag svg { width: 13px; height: 13px; fill: #B8900A; flex-shrink: 0; }
@@ -266,20 +285,22 @@
         .modal-section-text { font-size: 13.5px; color: var(--gray-700); line-height: 1.75; font-weight: 400; font-family: var(--font-body); }
         .modal-cap-box { background: var(--gray-100); border-radius: 10px; padding: 14px 20px; margin-top: 18px; display: flex; align-items: center; gap: 20px; }
         .modal-cap-label { font-size: 9px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-500); font-family: var(--font-body); }
-        .modal-cap-value { font-family: var(--font-display); font-size: 38px; font-weight: 800; color: var(--castrol-green); line-height: 1; }
-        .modal-cap-value.v-cap { color: var(--dark); }
-        .modal-cap-value.vt-cap { color: var(--voltronic-blue); }
+        .modal-cap-value { font-family: var(--font-display); font-size: 38px; font-weight: 800; line-height: 1; }
 
         @media (max-width: 768px) {
+            .logo-divider { display: none; }
+            .header-logos { gap: 12px 20px; }
             .nav-arr { display: flex; }
             .nav-container { justify-content: flex-start; }
-            .header-inner { padding: 0 16px; gap: 10px; }
-            .header-logo-wrap { height: 44px; }
-            .header-logo-wrap.castrol-wrap { width: 150px; }
-            .header-logo-wrap.valvoline-wrap { width: 130px; }
-            .header-logo-wrap.voltronic-wrap { width: 130px; }
-            .header-logos { gap: 14px; }
-            .hero { padding: 36px 16px 0; }
+            .header-inner { padding: 10px 16px; min-height: 60px; }
+            .header-logo-wrap { height: 38px; }
+            .header-logo-wrap.castrol-wrap { width: 110px; }
+            .header-logo-wrap.valvoline-wrap { width: 90px; }
+            .header-logo-wrap.voltronic-wrap { width: 110px; }
+            .header-logo-wrap.wolver-wrap { width: 90px; }
+            .header-logo-wrap.idemitsu-wrap { width: 90px; }
+            .header-logo-wrap.kixx-wrap { width: 55px; }
+            .hero { padding: 36px 16px 0; margin-top: 110px; } /* Đẩy banner xuống tránh che logo */
             .hero-inner { grid-template-columns: 1fr; gap: 0; }
             .hero-visual { display: none; }
             .hero-text { padding-bottom: 28px; }
@@ -295,13 +316,8 @@
             .reverse-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
             .btn-reverse { width: 100% !important; justify-content: center; margin-top: 4px; }
             .field-input, .field-select { font-size: 16px !important; }
-            .results-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 600px) {
-            .header-logo-wrap.castrol-wrap { width: 120px; }
-            .logo-divider { display: none; }
-            .header-logo-wrap.valvoline-wrap { width: 100px; }
-            .header-logo-wrap.voltronic-wrap { width: 100px; }
             .hero-title { font-size: clamp(32px, 11vw, 52px); }
             .main { padding: 14px 12px 36px; }
             .finder-header { padding: 14px 16px; gap: 10px; }
@@ -313,28 +329,25 @@
             .selector-grid { grid-template-columns: 1fr; gap: 10px; }
             .btn-search, .btn-reverse { width: 100%; height: 50px; justify-content: center; }
             .results-grid { grid-template-columns: 1fr; }
-            .product-img-wrap { width: 100px; padding: 10px; }
-            .recommend-badge { width: 100px; padding: 5px 0; font-size: 8px; border-radius: 0 0 10px 0; }
-            .brand-icon-wrap { width: 68px; height: 68px; }
-            .brand-icon-wrap img { width: 56px; height: 56px; }
-            .product-info { padding: 10px 12px 10px; }
+            
+            .product-inner { padding: 12px; gap: 12px; }
+            .product-img-wrap { width: 80px; height: 80px; border-radius: 10px; }
+            .brand-icon-wrap { width: 60px; height: 60px; border-radius: 8px; }
+            .brand-icon-wrap img { width: 50px; height: 50px; }
+            .recommend-badge { padding: 4px 12px; font-size: 8.5px; border-radius: 10px 0 10px 0; }
+            
             .product-name { font-size: 16px; }
-            .product-name.recommended-pad { margin-top: 16px; }
             .modal-box { border-radius: 16px; margin: 0; max-height: 92vh; }
             .modal-hero { padding: 16px; flex-direction: row; }
         }
         @media (max-width: 380px) {
-            .header-logo-wrap.castrol-wrap { width: 100px; }
-            .header-logo-wrap.valvoline-wrap { width: 85px; }
-            .header-logo-wrap.voltronic-wrap { width: 85px; }
             .hero-title { font-size: 30px; }
             .nav-item { padding: 9px 10px; font-size: 7px; }
             .nav-icon, .nav-icon img { width: 18px; height: 18px; }
             .nav-arr { width: 30px; }
-            .product-img-wrap { width: 90px; padding: 8px; }
-            .recommend-badge { width: 90px; padding: 4px 0; font-size: 7.5px; }
-            .brand-icon-wrap { width: 64px; height: 64px; }
-            .brand-icon-wrap img { width: 54px; height: 54px; }
+            .product-img-wrap { width: 70px; height: 70px; }
+            .brand-icon-wrap { width: 52px; height: 52px; }
+            .brand-icon-wrap img { width: 44px; height: 44px; }
             .product-name { font-size: 14px; }
             .finder-header-title { font-size: 12px; }
             .modal-product-name { font-size: 18px; }
@@ -347,46 +360,16 @@
         }
         @keyframes arrowPulse { 0% { opacity: 0.65; } 50% { opacity: 1; } 100% { opacity: 0.65; } }
         .nav-arr.pulse { animation: arrowPulse 1s ease-in-out 3; }
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: rgba(0, 0, 0, 0.18);
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgba(0, 0, 0, 0.35);
-        }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.18); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(0, 0, 0, 0.35); }
         @media (min-width: 769px) {
-            .nav-container {
-                scrollbar-width: thin;
-                padding-bottom: 6px;
-            }
-            .nav-container::-webkit-scrollbar {
-                display: block !important;
-                height: 6px;
-            }
+            .nav-container { scrollbar-width: thin; padding-bottom: 6px; }
+            .nav-container::-webkit-scrollbar { display: block !important; height: 6px; }
         }
-        @media (min-width: 769px) {
-            .nav-container {
-                scrollbar-width: thin;
-                padding-bottom: 6px;
-            }
-            .nav-container::-webkit-scrollbar {
-                display: block !important;
-                height: 6px;
-            }
-        }
-        html {
-            overflow-y: scroll;
-        }
-        body {
-            min-height: 100vh;
-        }
+        html { overflow-y: scroll; }
+        body { min-height: 100vh; }
     </style>
 </head>
 <body>
@@ -399,6 +382,12 @@
             <div class="header-logo-wrap valvoline-wrap"><img class="header-logo" src="https://www.valvolineglobal.com/493765/globalassets/vcom/us_valvoline_logo_horizontal_pms_nav.svg?format=svg&quality=80&width=182&height=55&rmode=pad" alt="Valvoline"></div>
             <div class="logo-divider"></div>
             <div class="header-logo-wrap voltronic-wrap"><img class="header-logo" src="https://voltronicvietnam.com/wp-content/uploads/2021/11/Voltronic_blue-1024x231.png" alt="Voltronic"></div>
+            <div class="logo-divider"></div>
+            <div class="header-logo-wrap wolver-wrap"><img class="header-logo" src="https://wolverlab.vn/upload/photo/logo-wolver2_11191823062020_280x70.png" alt="Wolver"></div>
+            <div class="logo-divider"></div>
+            <div class="header-logo-wrap idemitsu-wrap"><img class="header-logo" src="https://idemitsu.vn/lube/wp-content/themes/site/assets/img/logo_pc.png" alt="Idemitsu"></div>
+            <div class="logo-divider"></div>
+            <div class="header-logo-wrap kixx-wrap"><img class="header-logo" src="https://kixxnews.b-cdn.net/wp-content/uploads/2024/06/logo_renewal_x2.png" alt="Kixx"></div>
         </div>
     </div>
 </header>
@@ -493,8 +482,12 @@ var CAT_ICONS = {
 var CASTROL_LOGO = 'https://thelubricantoracle.castrol.com/images/brand_logo.jpeg';
 var VALVOLINE_LOGO = 'https://www.valvolineglobal.com/493765/globalassets/vcom/us_valvoline_logo_horizontal_pms_nav.svg?format=svg&quality=80&width=182&height=55&rmode=pad';
 var VOLTRONIC_LOGO = 'https://voltronicvietnam.com/wp-content/uploads/2021/11/Voltronic_blue-1024x231.png';
+var KIXX_LOGO = 'https://kixxnews.b-cdn.net/wp-content/uploads/2024/06/logo_renewal_x2.png';
+var IDEMITSU_LOGO = 'https://idemitsu.vn/lube/wp-content/themes/site/assets/img/logo_pc.png';
+var WOLVER_LOGO = 'https://wolverlab.vn/upload/photo/logo-wolver2_11191823062020_280x70.png';
 
 var CASTROL_CATALOG = {
+    // --- DẦU Ô TÔ DU LỊCH (SANG TRỌNG & HIỆU SUẤT) ---
     "Castrol EDGE 0W-20":{s:"SAE 0W-20 · API SP",adv:"Bảo vệ động cơ gấp 3 lần, giảm ma sát tối đa.",app:"Camry, CR-V, CX-5 đời mới.", c:"", u:""},
     "Castrol EDGE 5W-30":{s:"SAE 5W-30 · API SP",adv:"Bảo vệ cực bền ngay từ khi khởi động.",app:"Vios, Innova, Kia Cerato, Accent.", c:"", u:""},
     "Castrol EDGE 0W-20 LL IV":{s:"SAE 0W-20 · BMW LL-17FE+",adv:"Chuyên dụng cho xe Đức đời mới.",app:"BMW, MINI, VinFast Lux.", c:"", u:""},
@@ -502,16 +495,22 @@ var CASTROL_CATALOG = {
     "Castrol EDGE 5W-30 C3":{s:"SAE 5W-30 · ACEA C3",adv:"Dầu tổng hợp cho máy dầu hiện đại.",app:"Ranger, Fortuner, SantaFe.", c:"", u:""},
     "Castrol EDGE 5W-40":{s:"SAE 5W-40 · API SP",adv:"Hiệu suất tối đa cho xe hạng sang.",app:"Audi, Volkswagen, Skoda.", c:"", u:""},
     "Castrol MAGNATEC Hybrid 0W-16":{s:"SAE 0W-16 · API SP",adv:"Bảo vệ tối ưu cho động cơ Hybrid (HSD).",app:"Corolla Cross Hybrid, Camry Hybrid.", c:"", u:""},
+
+    // --- DẦU Ô TÔ PHỔ THÔNG & ĐÔ THỊ ---
     "Castrol MAGNATEC Stop-Start 5W-30":{s:"SAE 5W-30 · DUALOCK™",adv:"Chuyên dụng cho điều kiện chạy-dừng liên tục đô thị.",app:"Xe chạy dịch vụ, Grab, Taxi.", c:"", u:""},
     "Castrol MAGNATEC 5W-30":{s:"SAE 5W-30 · API SP",adv:"Phân tử dầu bám chặt như nam châm.",app:"Xpander, Honda City.", c:"", u:""},
     "Castrol MAGNATEC SUV 5W-30":{s:"SAE 5W-30 · ACEA A5/B5",adv:"Thiết kế riêng cho dòng xe gầm cao.",app:"Fortuner, SantaFe, Everest.", c:"", u:""},
     "Castrol MAGNATEC 10W-40":{s:"SAE 10W-40 · API SP",adv:"Bảo vệ vượt trội cho xe phổ thông.",app:"Xe đời 2005-2018.", c:"", u:""},
     "Castrol GTX Ultraclean 10W-40":{s:"SAE 10W-40 · API SP",adv:"Làm sạch cặn bùn động cơ.",app:"Xe phổ thông đời cũ.", c:"", u:""},
     "Castrol GTX Diesel 15W-40":{s:"SAE 15W-40 · API CI-4",adv:"Chống oxy hóa cho máy dầu cũ.",app:"Xe tải nhẹ, bán tải cũ.", c:"", u:""},
+
+    // --- DẦU TẢI NẶNG & THƯƠNG MẠI ---
     "Castrol CRB Turbomax 15W-40":{s:"SAE 15W-40 · API CI-4",adv:"Công nghệ DuraShield™ chống mài mòn gấp đôi.",app:"Xe tải, xe khách cỡ trung.", c:"", u:""},
     "Castrol CRB Turbomax 20W-50":{s:"SAE 20W-50 · API CH-4",adv:"Bôi trơn hoàn hảo dưới tải nặng nhiệt cao.",app:"Xe tải nặng, xe ben, máy cày.", c:"", u:""},
     "Castrol VECTON 15W-40 CK-4":{s:"SAE 15W-40 · API CK-4",adv:"Bảo vệ hệ thống khí thải Euro 5/6.",app:"Đầu kéo, xe tải đời mới.", c:"", u:""},
     "Castrol VECTON 15W-40":{s:"SAE 15W-40 · API CI-4",adv:"Kéo dài chu kỳ thay dầu thêm 20%.",app:"Xe khách giường nằm, máy công trình.", c:"", u:""},
+
+    // --- HỘP SỐ, CẦU & XE ĐIỆN (EV) ---
     "Castrol Transmax ATF":{s:"Dầu hộp số tự động",adv:"Sang số mượt mà, chống rung giật.",app:"Hộp số AT, xe điện VinFast/BYD.", c:"", u:""},
     "Castrol Transmax CVT":{s:"Dầu hộp số vô cấp",adv:"Kéo dài tuổi thọ dây đai hộp số.",app:"Hộp số CVT Honda, Toyota.", c:"", u:""},
     "Castrol Transmax Dual":{s:"Dầu hộp số ly hợp kép",adv:"Đồng bộ hóa ly hợp tuyệt vời.",app:"Hộp số DCT/DSG.", c:"", u:""},
@@ -519,6 +518,8 @@ var CASTROL_CATALOG = {
     "Castrol Transmax Axle 85W-140":{s:"Dầu cầu tải nặng",adv:"Chịu cực áp cực tốt.",app:"Cầu xe ben, đầu kéo.", c:"", u:""},
     "Castrol ON EV Transmission Fluid":{s:"Dầu hộp số xe điện",adv:"Giảm thất thoát năng lượng.",app:"Xe điện hiện đại.", c:"", u:""},
     "Castrol ON EV Thermal Fluid":{s:"Nước làm mát pin EV",adv:"Giải nhiệt pin hiệu quả cao.",app:"Hệ thống pin xe điện.", c:"", u:""},
+
+    // --- XE MÁY & PHỤ TRỢ ---
     "Castrol Power1 Ultimate 10W-40":{s:"Tổng hợp · JASO MA2",adv:"Công nghệ 5 trong 1 giúp bốc máy.",app:"Winner, Exciter, Raider.", c:"", u:""},
     "Castrol Power1 Scooter Ultimate 5W-40":{s:"Tổng hợp · JASO MB",adv:"Tăng tốc mượt, giảm ma sát.",app:"SH, NVX, Vespa.", c:"", u:""},
     "Castrol Scooter Gear Oil 80W-90":{s:"Dầu láp xe tay ga",adv:"Chống hú láp, bảo vệ bánh răng.",app:"Mọi dòng xe tay ga.", c:"", u:""},
@@ -527,17 +528,24 @@ var CASTROL_CATALOG = {
 };
 
 var VALVOLINE_CATALOG = {
+    // --- DẦU Ô TÔ DU LỊCH & ĐẶC TRỊ ---
     "Valvoline Modern Engine 0W-20":{s:"SAE 0W-20 · API SP",adv:"Chống cháy nổ sớm (LSPI), sạch động cơ GDI.",app:"Camry, CR-V, CX-5 đời mới.", c:"", u:""},
     "Valvoline SynPower 5W-30":{s:"SAE 5W-30 · API SP",adv:"Chống mài mòn vượt trội.",app:"Vios, Xpander, Accent.", c:"", u:""},
     "Valvoline SynPower MST 5W-30":{s:"SAE 5W-30 · ACEA C3",adv:"Bảo vệ bộ lọc DPF cho máy dầu Âu Mỹ.",app:"Ranger, Everest máy dầu.", c:"", u:""},
     "Valvoline Hybrid Performance 0W-16":{s:"SAE 0W-16 · API SP",adv:"Tối ưu hóa khả năng khởi động lại liên tục.",app:"Toyota Hybrid, Nissan e-Power.", c:"", u:""},
     "Valvoline MaxLife 10W-40":{s:"SAE 10W-40 · Cao cấp",adv:"Phục hồi gioăng phớt, giảm hao dầu.",app:"Xe trên 100.000km.", c:"", u:""},
     "Valvoline Daily Protection 10W-40":{s:"SAE 10W-40 · API SN",adv:"Ngăn cặn bùn tích tụ.",app:"Xe phổ thông đời cũ.", c:"", u:""},
+
+    // --- DẦU TẢI NẶNG ---
     "Valvoline All-Fleet Plus 15W-40":{s:"SAE 15W-40 · API CI-4",adv:"Bảo vệ động cơ tải nặng.",app:"Isuzu QKR, xe khách.", c:"", u:""},
     "Valvoline Premium Blue 8400 15W-40":{s:"SAE 15W-40 · API CK-4",adv:"Dầu máy chuyên dụng Cummins.",app:"Đầu kéo, xe khách Universe.", c:"", u:""},
+
+    // --- HỘP SỐ & XE ĐIỆN ---
     "Valvoline MaxLife Multi-Vehicle ATF":{s:"Dầu hộp số tự động",adv:"Phục hồi gioăng phớt, sang số êm.",app:"Mọi dòng hộp số AT.", c:"", u:""},
     "Valvoline MaxLife CVT":{s:"Dầu hộp số vô cấp",adv:"Bảo vệ dây đai kim loại.",app:"Hộp số CVT.", c:"", u:""},
     "Valvoline EV Performance Fluid":{s:"Dầu hộp số xe điện",adv:"Đặc tính cách điện xuất sắc.",app:"Xe điện VinFast, BYD.", c:"", u:""},
+
+    // --- XE MÁY & PHỤ GIA ---
     "Valvoline SynPower 4T 10W-40":{s:"Tổng hợp · JASO MA2",adv:"Bảo vệ ly hợp ướt, chịu nhiệt cực cao.",app:"Exciter, Winner, PKL.", c:"", u:""},
     "Valvoline Scooter Ultimate 5W-40":{s:"Tổng hợp · JASO MB",adv:"Giảm ồn, mát máy.",app:"SH, NVX.", c:"", u:""},
     "Valvoline Scooter Gear Oil 80W-90":{s:"Dầu láp xe tay ga",adv:"Bôi trơn bánh răng truyền động cực êm.",app:"Xe tay ga phổ thông.", c:"", u:""},
@@ -545,620 +553,842 @@ var VALVOLINE_CATALOG = {
     "Valvoline Complete Fuel System Cleaner":{s:"Phụ gia xăng",adv:"Làm sạch kim phun buồng đốt.",app:"Ô tô, xe máy xăng.", c:"", u:""}
 };
 
+// CÁC CATALOG MỚI
 var VOLTRONIC_CATALOG = {
-    "Voltronic SYN 0W-20":{s:"SAE 0W-20 · API SP/RC",adv:"Dầu tổng hợp cao cấp với công nghệ chống mài mòn vượt trội.",app:"Toyota Camry, Honda CR-V, Mazda CX-5 đời mới.", c:"", u:""},
-    "Voltronic HC7 5W-30":{s:"SAE 5W-30 · API SP",adv:"Dầu hydrocracking chất lượng cao, bảo vệ động cơ toàn diện.",app:"Vios, Innova, Kia Cerato, Hyundai Accent.", c:"", u:""},
-    "Voltronic Moly 5W-40":{s:"SAE 5W-40 · API SN Plus",adv:"Công nghệ Moly Disulfide giúp bảo vệ cực bền cho xe Đức.",app:"Audi, BMW, Mercedes-Benz đời 2015+.", c:"", u:""},
-    "Voltronic Turbo Plus 5W-30":{s:"SAE 5W-30 · ACEA C3",adv:"Chuyên dụng cho động cơ Turbo tăng áp, bảo vệ DPF.",app:"Ford Ranger, Everest, Hyundai SantaFe máy dầu.", c:"", u:""},
-    "Voltronic Hybrid 0W-16":{s:"SAE 0W-16 · API SP",adv:"Tối ưu cho xe Hybrid, tiết kiệm nhiên liệu tối đa.",app:"Toyota Corolla Cross Hybrid, Camry Hybrid.", c:"", u:""},
-    "Voltronic Energy Plus 10W-40":{s:"SAE 10W-40 · API SN",adv:"Dầu bán tổng hợp chất lượng cao, bảo vệ xe phổ thông.",app:"Toyota Vios đời cũ, Kia Morning, Hyundai i10.", c:"", u:""},
-    "Voltronic CRDi 5W-30":{s:"SAE 5W-30 · ACEA C3",adv:"Chuyên dụng cho động cơ Diesel Common Rail, giảm khói thải.",app:"Hyundai Tucson, Kia Sorento máy dầu.", c:"", u:""},
-    "Voltronic Scooter 4T 5W-40":{s:"SAE 5W-40 · JASO MB",adv:"Dầu tổng hợp cho xe tay ga, giảm ồn, mát máy.",app:"Honda SH, Yamaha NVX, Vespa GTS.", c:"", u:""},
-    "Voltronic Moto 4T 10W-40":{s:"SAE 10W-40 · JASO MA2",adv:"Dầu bán tổng hợp cho xe côn tay, bảo vệ ly hợp ướt.",app:"Honda Winner, Yamaha Exciter, Suzuki Raider.", c:"", u:""},
-    "Voltronic 2T Moto":{s:"Dầu nhớt 2 kỳ · JASO FD",adv:"Đốt sạch, giảm khói thải, bảo vệ pít-tông.",app:"Suzuki Xipo, Yamaha Ya Z, Honda NSR.", c:"", u:""},
-    "Voltronic Gear Oil 80W-90 GL-4":{s:"SAE 80W-90 · GL-4",adv:"Dầu láp xe tay ga, bôi trơn bánh răng truyền động.",app:"Honda Air Blade, Yamaha Grande, các dòng xe tay ga.", c:"", u:""},
-    "Voltronic ATF VI":{s:"Dầu hộp số tự động · Dexron VI",adv:"Dầu hộp số tự động tổng hợp, sang số mượt mà.",app:"Hộp số AT 6-8 cấp, Toyota, Ford, GM.", c:"", u:""},
-    "Voltronic CVT Fluid":{s:"Dầu hộp số vô cấp",adv:"Bảo vệ dây đai kim loại, chống trượt, chống ồn.",app:"Hộp số CVT Honda, Toyota, Nissan.", c:"", u:""},
-    "Voltronic Diesel DPF Cleaner":{s:"Phụ gia làm sạch DPF",adv:"Làm sạch bộ lọc DPF, phục hồi công suất động cơ dầu.",app:"Xe dầu đời mới có DPF.", c:"", u:""},
-    "Voltronic Fuel System Cleaner":{s:"Phụ gia làm sạch kim phun",adv:"Làm sạch kim phun xăng, phục hồi khả năng phun nhiên liệu.",app:"Ô tô, xe máy dùng xăng.", c:"", u:""},
-    "Voltronic Engine Flush":{s:"Dung dịch súc rửa động cơ",adv:"Làm sạch cặn bùn trước khi thay dầu mới.",app:"Mọi loại động cơ.", c:"", u:""}
+    "Voltronic Touring Turbo 5W-40": {s:"SAE 5W-40 · Tổng hợp toàn phần", adv:"Công nghệ gốm sứ siêu chống mài mòn, tối ưu cho xe sang.", app:"Mercedes, BMW, Audi, Porsche.", c:"", u:""},
+    "Voltronic Granturismo 4T": {s:"JASO MA2 · Tổng hợp ESTER", adv:"Giải nhiệt siêu nhanh, bốc máy cho xe phân khối lớn.", app:"Ducati, Kawasaki, Triumph, xe côn tay.", c:"", u:""},
+    "Voltronic G20 Engine Flush": {s:"Phụ gia súc rửa", adv:"Làm sạch cặn bẩn, bùn nhớt trong động cơ an toàn.", app:"Dùng trước khi thay nhớt cho mọi loại xe.", c:"1 chai", u:""},
+    "Voltronic G17 Petrol Additive": {s:"Phụ gia nhiên liệu xăng", adv:"Làm sạch kim phun, buồng đốt, tăng chỉ số octane.", app:"Dành cho xe ô tô, xe máy xăng.", c:"1 chai", u:""},
+    "Voltronic 80W90 Gear Oil": {s:"SAE 80W-90 · GL-5", adv:"Bôi trơn hộp số, chịu áp lực cực cao cho cầu xe.", app:"Xe tải, hộp số sàn.", c:"", u:""}
 };
 
+var WOLVER_CATALOG = {
+    "Wolver SuperTec 5W-40": {s:"SAE 5W-40 · API SN/CF", adv:"Bảo vệ tối đa ở nhiệt độ cao, giảm cặn cực tốt.", app:"Xe ô tô du lịch, xe Châu Âu cao cấp.", c:"", u:""},
+    "Wolver Four Stroke 4T 10W-40": {s:"SAE 10W-40 · JASO MA2", adv:"Chống trượt ly hợp, bảo vệ hộp số xuất sắc.", app:"Winner, Exciter, Raider, mô tô PKL.", c:"", u:""},
+    "Wolver Turbo Truck 15W-40": {s:"SAE 15W-40 · API CI-4", adv:"Kéo dài tuổi thọ động cơ tải nặng liên tục.", app:"Xe khách, xe tải nặng, máy công trình.", c:"", u:""},
+    "Wolver Motor Flush": {s:"Phụ gia súc rửa", adv:"Làm sạch nhanh và an toàn động cơ trong 10 phút.", app:"Mọi loại động cơ 4 thì.", c:"1 chai", u:""},
+    "Wolver Super Fluid ATF": {s:"Dầu hộp số tự động", adv:"Sang số êm ái, chống rung giật hộp số.", app:"Hộp số AT trên ô tô du lịch.", c:"", u:""}
+};
+
+var IDEMITSU_CATALOG = {
+    "Idemitsu IFG5 5W-30": {s:"SAE 5W-30 · API SP", adv:"Tối ưu hóa sức mạnh và tiết kiệm nhiên liệu.", app:"Các dòng xe Nhật Bản: Toyota, Honda, Mazda.", c:"", u:""},
+    "Idemitsu IRG5 10W-40 MA2": {s:"SAE 10W-40 · JASO MA2", adv:"Cảm giác lái mượt mà, phản hồi tay ga cực nhạy.", app:"Xe số, xe côn tay Honda, Yamaha, Suzuki.", c:"", u:""},
+    "Idemitsu Diesel 15W-40": {s:"SAE 15W-40 · API CI-4", adv:"Bảo vệ siêu việt cho động cơ diesel tải trọng cao.", app:"Xe tải Isuzu, Hino, máy nông nghiệp Kubota.", c:"", u:""},
+    "Idemitsu ATF": {s:"Dầu hộp số tự động", adv:"Công nghệ ma sát tối ưu chuyên biệt cho xe Nhật.", app:"Hộp số tự động Toyota, Honda.", c:"", u:""},
+    "Idemitsu Scooter 10W-40 MB": {s:"SAE 10W-40 · JASO MB", adv:"Dành riêng cho xe tay ga, giảm hao mòn động cơ.", app:"Honda SH, Air Blade, Vision, Yamaha NVX.", c:"", u:""}
+};
+
+var KIXX_CATALOG = {
+    "Kixx G1 5W-30 SP": {s:"SAE 5W-30 · API SP", adv:"Công nghệ Triple Double bảo vệ đa tầng vượt trội.", app:"Xe Hàn Quốc: Hyundai, Kia.", c:"", u:""},
+    "Kixx PAO1 0W-30": {s:"SAE 0W-30 · Tổng hợp PAO", adv:"Khởi động lạnh siêu tốc, bảo vệ tuyệt đỉnh.", app:"Xe hạng sang, động cơ turbo hiện đại.", c:"", u:""},
+    "Kixx Ultra 4T 10W-40": {s:"SAE 10W-40 · JASO MA2", adv:"Chống oxy hóa tốt, bảo vệ ly hợp ướt tối đa.", app:"Xe máy số, xe côn tay phổ thông.", c:"", u:""},
+    "Kixx HD1 15W-40": {s:"SAE 15W-40 · API CI-4", adv:"Độ bền cắt cực cao, chống cặn bùn hiệu quả.", app:"Xe tải, xe thương mại, máy công trình.", c:"", u:""},
+    "Kixx ATF DX-III": {s:"Dầu hộp số DX-III", adv:"Chuyển số mượt, độ ổn định nhiệt cao.", app:"Hộp số tự động đời cũ, hệ thống trợ lực.", c:"", u:""}
+};
+
+// DATABASE CŨ (Được giữ nguyên hoàn toàn theo đúng yêu cầu)
 var DB = {
     oto:{label:"Ôtô",brands:{
+        /* --- NHẬT BẢN --- */
         TOYOTA:{models:{
-            Wigo:{e:{o:3.2},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Vios:{e:{o:3.9},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Yaris:{e:{o:3.9},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Corolla_Altis_1_8:{e:{o:4.2},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic SYN 0W-20",r:1}]},
-            Camry_2_0:{e:{o:4.3},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic SYN 0W-20",r:1}]},
-            Camry_2_5:{e:{o:4.5},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic SYN 0W-20",r:1}]},
-            Camry_Hybrid:{e:{o:4.3},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic SYN 0W-20",r:1}]},
-            Raize:{e:{o:4.0},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic SYN 0W-20",r:1}]},
-            Corolla_Cross_1_8V:{e:{o:4.2},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic SYN 0W-20",r:1}]},
-            Corolla_Cross_Hybrid:{e:{o:4.2},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic Hybrid 0W-16",r:1}]},
-            Yaris_Cross_1_5V:{e:{o:4.0},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic SYN 0W-20",r:1}]},
-            Yaris_Cross_Hybrid:{e:{o:4.0},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic Hybrid 0W-16",r:1}]},
-            Veloz_Cross:{e:{o:4.0},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic SYN 0W-20",r:1}]},
-            Avanza_Premio:{e:{o:4.0},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic SYN 0W-20",r:1}]},
-            Innova_Cross_Xăng:{e:{o:4.3},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic SYN 0W-20",r:1}]},
-            Innova_Cross_Hybrid:{e:{o:4.3},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic Hybrid 0W-16",r:1}]},
-            Innova_2_0E_MT:{e:{o:5.6},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Innova_2_0G_AT:{e:{o:5.6},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Fortuner_2_7_Xăng:{e:{o:5.6},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Fortuner_2_4_Dầu:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic Turbo Plus 5W-30",r:1}]},
-            Fortuner_2_8_Dầu:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic Turbo Plus 5W-30",r:1}]},
-            Hilux_2_4_Dầu:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic Turbo Plus 5W-30",r:1}]},
-            Land_Cruiser_Prado:{e:{o:6.0},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic Moly 5W-40",r:1}]},
-            Land_Cruiser_LC300:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic Turbo Plus 5W-30",r:1}]},
-            Alphard_3_5:{e:{o:6.1},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic SYN 0W-20",r:1}]},
-            Alphard_Hybrid:{e:{o:4.3},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic Hybrid 0W-16",r:1}]}
+            Wigo:{e:{o:3.2},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            Vios:{e:{o:3.9},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            Yaris:{e:{o:3.9},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            Corolla_Altis_1_8:{e:{o:4.2},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            Camry_2_0:{e:{o:4.3},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            Camry_2_5:{e:{o:4.5},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            Camry_Hybrid:{e:{o:4.3},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            Raize:{e:{o:4.0},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            Corolla_Cross_1_8V:{e:{o:4.2},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            Corolla_Cross_Hybrid:{e:{o:4.2},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            Yaris_Cross_1_5V:{e:{o:4.0},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            Yaris_Cross_Hybrid:{e:{o:4.0},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            Veloz_Cross:{e:{o:4.0},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            Avanza_Premio:{e:{o:4.0},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            Innova_Cross_Xăng:{e:{o:4.3},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            Innova_Cross_Hybrid:{e:{o:4.3},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            Innova_2_0E_MT:{e:{o:5.6},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            Innova_2_0G_AT:{e:{o:5.6},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            Fortuner_2_7_Xăng:{e:{o:5.6},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            Fortuner_2_4_Dầu:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]},
+            Fortuner_2_8_Dầu:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]},
+            Hilux_2_4_Dầu:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]},
+            Land_Cruiser_Prado:{e:{o:6.0},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            Land_Cruiser_LC300:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]},
+            Alphard_3_5:{e:{o:6.1},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            Alphard_Hybrid:{e:{o:4.3},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]}
         }},
         HONDA:{models:{
-            City_1_5:{e:{o:3.5},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic SYN 0W-20",r:1}]},
-            Civic_1_5_Turbo:{e:{o:3.7},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic SYN 0W-20",r:1}]},
-            Civic_eHEV_Hybrid:{e:{o:4.0},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic Hybrid 0W-16",r:1}]},
-            Civic_Type_R:{e:{o:5.4},c:[{n:"Castrol EDGE 5W-40",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic Moly 5W-40",r:1}]},
-            HR_V_1_5L:{e:{o:3.8},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic SYN 0W-20",r:1}]},
-            HR_V_1_5_Turbo:{e:{o:3.8},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic SYN 0W-20",r:1}]},
-            CR_V_1_5_Turbo:{e:{o:4.2},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic SYN 0W-20",r:1}]},
-            CR_V_eHEV_Hybrid:{e:{o:4.0},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic Hybrid 0W-16",r:1}]},
-            Accord_1_5_Turbo:{e:{o:4.2},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic SYN 0W-20",r:1}]},
-            BR_V:{e:{o:3.8},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic SYN 0W-20",r:1}]},
-            Brio:{e:{o:3.5},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic SYN 0W-20",r:1}]}
+            City_1_5:{e:{o:3.5},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            Civic_1_5_Turbo:{e:{o:3.7},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            Civic_eHEV_Hybrid:{e:{o:4.0},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            Civic_Type_R:{e:{o:5.4},c:[{n:"Castrol EDGE 5W-40",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            HR_V_1_5L:{e:{o:3.8},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            HR_V_1_5_Turbo:{e:{o:3.8},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            CR_V_1_5_Turbo:{e:{o:4.2},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            CR_V_eHEV_Hybrid:{e:{o:4.0},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            Accord_1_5_Turbo:{e:{o:4.2},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            BR_V:{e:{o:3.8},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            Brio:{e:{o:3.5},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]}
         }},
         MAZDA:{models:{
-            Mazda2_Sedan:{e:{o:4.2},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic SYN 0W-20",r:1}]},
-            Mazda2_Sport:{e:{o:4.2},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic SYN 0W-20",r:1}]},
-            Mazda3_1_5:{e:{o:4.2},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic SYN 0W-20",r:1}]},
-            Mazda3_2_0:{e:{o:4.5},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic SYN 0W-20",r:1}]},
-            Mazda6_2_0:{e:{o:4.2},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic SYN 0W-20",r:1}]},
-            Mazda6_2_5:{e:{o:4.5},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic SYN 0W-20",r:1}]},
-            CX_3:{e:{o:4.2},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            CX_30:{e:{o:4.2},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            CX_5_2_0:{e:{o:4.2},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            CX_5_2_5:{e:{o:4.5},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            CX_8:{e:{o:4.5},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            BT_50_Dầu:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic Turbo Plus 5W-30",r:1}]}
+            Mazda2_Sedan:{e:{o:4.2},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            Mazda2_Sport:{e:{o:4.2},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            Mazda3_1_5:{e:{o:4.2},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            Mazda3_2_0:{e:{o:4.5},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            Mazda6_2_0:{e:{o:4.2},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            Mazda6_2_5:{e:{o:4.5},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            CX_3:{e:{o:4.2},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            CX_30:{e:{o:4.2},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            CX_5_2_0:{e:{o:4.2},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            CX_5_2_5:{e:{o:4.5},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            CX_8:{e:{o:4.5},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            BT_50_Dầu:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]}
         }},
+
+        /* --- HÀN QUỐC --- */
         HYUNDAI:{models:{
-            Grand_i10_1_2:{e:{o:3.2},c:[{n:"Castrol MAGNATEC 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Accent_1_4:{e:{o:3.8},c:[{n:"Castrol MAGNATEC 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Elantra_1_6:{e:{o:4.0},c:[{n:"Castrol MAGNATEC 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Elantra_N_Line:{e:{o:4.5},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Creta_1_5:{e:{o:4.0},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Tucson_2_0_Xăng:{e:{o:4.3},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Tucson_2_0_Dầu:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic Turbo Plus 5W-30",r:1}]},
-            SantaFe_2_5_Xăng:{e:{o:5.5},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            SantaFe_2_2_Dầu:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic CRDi 5W-30",r:1}]},
-            Custin_1_5_Turbo:{e:{o:4.0},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Palisade_Dầu:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic CRDi 5W-30",r:1}]},
-            Ioniq_5_EV:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}],vt_gear:[{n:"Voltronic ATF VI",r:1}]}
+            Grand_i10_1_2:{e:{o:3.2},c:[{n:"Castrol MAGNATEC 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            Accent_1_4:{e:{o:3.8},c:[{n:"Castrol MAGNATEC 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            Elantra_1_6:{e:{o:4.0},c:[{n:"Castrol MAGNATEC 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            Elantra_N_Line:{e:{o:4.5},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            Creta_1_5:{e:{o:4.0},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            Tucson_2_0_Xăng:{e:{o:4.3},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            Tucson_2_0_Dầu:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]},
+            SantaFe_2_5_Xăng:{e:{o:5.5},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            SantaFe_2_2_Dầu:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]},
+            Custin_1_5_Turbo:{e:{o:4.0},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            Palisade_Dầu:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]},
+            Ioniq_5_EV:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}]}
         }},
         KIA:{models:{
-            Morning:{e:{o:3.2},c:[{n:"Castrol MAGNATEC 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Soluto:{e:{o:3.3},c:[{n:"Castrol MAGNATEC 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            K3_1_6:{e:{o:4.0},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            K5_2_0:{e:{o:4.3},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Sonet:{e:{o:3.5},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Seltos_1_5:{e:{o:4.0},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Carens_Dầu:{e:{o:5.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic CRDi 5W-30",r:1}]},
-            Sportage_Dầu:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic CRDi 5W-30",r:1}]},
-            Sorento_Dầu:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic CRDi 5W-30",r:1}]},
-            Carnival_Dầu:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic CRDi 5W-30",r:1}]}
+            Morning:{e:{o:3.2},c:[{n:"Castrol MAGNATEC 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            Soluto:{e:{o:3.3},c:[{n:"Castrol MAGNATEC 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            K3_1_6:{e:{o:4.0},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            K5_2_0:{e:{o:4.3},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            Sonet:{e:{o:3.5},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            Seltos_1_5:{e:{o:4.0},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            Carens_Dầu:{e:{o:5.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]},
+            Sportage_Dầu:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]},
+            Sorento_Dầu:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]},
+            Carnival_Dầu:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]}
         }},
+
+        /* --- VIỆT NAM & MỸ --- */
         VINFAST:{models:{
-            VF_3:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}],vt_gear:[{n:"Voltronic ATF VI",r:1}]},
-            VF_5_Plus:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}],vt_gear:[{n:"Voltronic ATF VI",r:1}]},
-            VF_6:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}],vt_gear:[{n:"Voltronic ATF VI",r:1}]},
-            VF_7:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}],vt_gear:[{n:"Voltronic ATF VI",r:1}]},
-            VF_8:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}],vt_gear:[{n:"Voltronic ATF VI",r:1}]},
-            VF_9:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}],vt_gear:[{n:"Voltronic ATF VI",r:1}]},
-            Lux_A2_0:{e:{o:5.8},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Lux_SA2_0:{e:{o:5.8},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Fadil:{e:{o:4.0},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            VF_3:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}]},
+            VF_5_Plus:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}]},
+            VF_6:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}]},
+            VF_7:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}]},
+            VF_8:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}]},
+            VF_9:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}]},
+            Lux_A2_0:{e:{o:5.8},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            Lux_SA2_0:{e:{o:5.8},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            Fadil:{e:{o:4.0},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]}
         }},
         FORD:{models:{
-            Ranger_2_0_Bi_Turbo:{e:{o:7.5},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic Turbo Plus 5W-30",r:1}]},
-            Everest_2_0_Bi_Turbo:{e:{o:7.5},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic Turbo Plus 5W-30",r:1}]},
-            Raptor:{e:{o:7.5},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic Moly 5W-40",r:1}]},
-            Territory:{e:{o:4.5},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Explorer_2_3:{e:{o:5.7},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Ranger_2_0_Bi_Turbo:{e:{o:7.5},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}]},
+            Everest_2_0_Bi_Turbo:{e:{o:7.5},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}]},
+            Raptor:{e:{o:7.5},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}]},
+            Territory:{e:{o:4.5},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            Explorer_2_3:{e:{o:5.7},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]}
         }},
+
+        /* --- XE ĐỨC & XE SANG --- */
         MERCEDES_BENZ:{models:{
-            C200_Avantgarde:{e:{o:6.0},c:[{n:"Castrol EDGE 5W-30 M",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic Moly 5W-40",r:1}]},
-            C300_AMG:{e:{o:6.5},c:[{n:"Castrol EDGE 5W-30 M",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic Moly 5W-40",r:1}]},
-            E300_AMG:{e:{o:6.5},c:[{n:"Castrol EDGE 5W-30 M",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic Moly 5W-40",r:1}]},
-            S450_Luxury:{e:{o:8.0},c:[{n:"Castrol EDGE 5W-30 M",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic Moly 5W-40",r:1}]},
-            GLC300_4MATIC:{e:{o:6.5},c:[{n:"Castrol EDGE 5W-30 M",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic Moly 5W-40",r:1}]},
-            G63_AMG:{e:{o:9.5},c:[{n:"Castrol EDGE 5W-40",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic Moly 5W-40",r:1}]}
+            C200_Avantgarde:{e:{o:6.0},c:[{n:"Castrol EDGE 5W-30 M",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]},
+            C300_AMG:{e:{o:6.5},c:[{n:"Castrol EDGE 5W-30 M",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]},
+            E300_AMG:{e:{o:6.5},c:[{n:"Castrol EDGE 5W-30 M",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]},
+            S450_Luxury:{e:{o:8.0},c:[{n:"Castrol EDGE 5W-30 M",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]},
+            GLC300_4MATIC:{e:{o:6.5},c:[{n:"Castrol EDGE 5W-30 M",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]},
+            G63_AMG:{e:{o:9.5},c:[{n:"Castrol EDGE 5W-40",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]}
         }},
         BMW:{models:{
-            "320i_Sport_Line":{e:{o:5.2},c:[{n:"Castrol EDGE 0W-20 LL IV",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic Moly 5W-40",r:1}]},
-            "330i_M_Sport":{e:{o:5.8},c:[{n:"Castrol EDGE 0W-20 LL IV",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic Moly 5W-40",r:1}]},
-            "520i":{e:{o:5.8},c:[{n:"Castrol EDGE 0W-20 LL IV",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic Moly 5W-40",r:1}]},
-            X5_xDrive40i:{e:{o:6.5},c:[{n:"Castrol EDGE 0W-20 LL IV",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic Moly 5W-40",r:1}]},
-            X7_xDrive40i:{e:{o:8.0},c:[{n:"Castrol EDGE 0W-20 LL IV",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic Moly 5W-40",r:1}]}
+            "320i_Sport_Line":{e:{o:5.2},c:[{n:"Castrol EDGE 0W-20 LL IV",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            "330i_M_Sport":{e:{o:5.8},c:[{n:"Castrol EDGE 0W-20 LL IV",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            "520i":{e:{o:5.8},c:[{n:"Castrol EDGE 0W-20 LL IV",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            X5_xDrive40i:{e:{o:6.5},c:[{n:"Castrol EDGE 0W-20 LL IV",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            X7_xDrive40i:{e:{o:8.0},c:[{n:"Castrol EDGE 0W-20 LL IV",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]}
         }},
         AUDI:{models:{
-            A4_35_TFSI:{e:{o:5.0},c:[{n:"Castrol EDGE 5W-40",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic Moly 5W-40",r:1}]},
-            A6_45_TFSI:{e:{o:6.5},c:[{n:"Castrol EDGE 5W-40",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic Moly 5W-40",r:1}]},
-            Q5_45_TFSI:{e:{o:5.0},c:[{n:"Castrol EDGE 5W-40",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic Moly 5W-40",r:1}]},
-            Q7_55_TFSI:{e:{o:6.5},c:[{n:"Castrol EDGE 5W-40",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic Moly 5W-40",r:1}]}
+            A4_35_TFSI:{e:{o:5.0},c:[{n:"Castrol EDGE 5W-40",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]},
+            A6_45_TFSI:{e:{o:6.5},c:[{n:"Castrol EDGE 5W-40",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]},
+            Q5_45_TFSI:{e:{o:5.0},c:[{n:"Castrol EDGE 5W-40",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]},
+            Q7_55_TFSI:{e:{o:6.5},c:[{n:"Castrol EDGE 5W-40",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]}
         }},
         PORSCHE:{models:{
-            "911_Carrera":{e:{o:8.0},c:[{n:"Castrol EDGE 5W-40",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic Moly 5W-40",r:1}]},
-            Macan_2_0:{e:{o:5.0},c:[{n:"Castrol EDGE 5W-40",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic Moly 5W-40",r:1}]},
-            Cayenne_3_0:{e:{o:8.0},c:[{n:"Castrol EDGE 5W-40",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic Moly 5W-40",r:1}]}
+            "911_Carrera":{e:{o:8.0},c:[{n:"Castrol EDGE 5W-40",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            Macan_2_0:{e:{o:5.0},c:[{n:"Castrol EDGE 5W-40",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]},
+            Cayenne_3_0:{e:{o:8.0},c:[{n:"Castrol EDGE 5W-40",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]}
         }},
         LEXUS:{models:{
-            IS300:{e:{o:4.5},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic SYN 0W-20",r:1}]},
-            ES250:{e:{o:4.5},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic SYN 0W-20",r:1}]},
-            RX350:{e:{o:5.5},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic SYN 0W-20",r:1}]},
-            LX600:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            IS300:{e:{o:4.5},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            ES250:{e:{o:4.5},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            RX350:{e:{o:5.5},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            LX600:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]}
         }},
         ROLLS_ROYCE:{models:{
-            Phantom_VIII:{e:{o:10.5},c:[{n:"Castrol EDGE 5W-40",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic Moly 5W-40",r:1}]},
-            Cullinan:{e:{o:10.5},c:[{n:"Castrol EDGE 5W-40",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic Moly 5W-40",r:1}]}
+            Phantom_VIII:{e:{o:10.5},c:[{n:"Castrol EDGE 5W-40",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            Cullinan:{e:{o:10.5},c:[{n:"Castrol EDGE 5W-40",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]}
         }},
         LAMBORGHINI:{models:{
-            Urus:{e:{o:9.5},c:[{n:"Castrol EDGE 5W-40",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic Moly 5W-40",r:1}]}
+            Urus:{e:{o:9.5},c:[{n:"Castrol EDGE 5W-40",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]}
         }},
+
+        /* --- TRUNG QUỐC & HÃNG KHÁC --- */
         BYD:{models:{
-            Dolphin_EV:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}],vt_gear:[{n:"Voltronic ATF VI",r:1}]},
-            Atto_3_EV:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}],vt_gear:[{n:"Voltronic ATF VI",r:1}]},
-            Seal_EV:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}],vt_gear:[{n:"Voltronic ATF VI",r:1}]}
+            Dolphin_EV:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}]},
+            Atto_3_EV:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}]},
+            Seal_EV:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}]}
         }},
         MG:{models:{
-            MG5:{e:{o:4.0},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            ZS:{e:{o:4.0},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            MG7:{e:{o:5.0},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            MG5:{e:{o:4.0},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            ZS:{e:{o:4.0},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]},
+            MG7:{e:{o:5.0},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]}
         }},
         HAVAL:{models:{
-            H6_HEV:{e:{o:4.5},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            H6_HEV:{e:{o:4.5},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]}
         }},
         LAND_ROVER:{models:{
-            Defender_110:{e:{o:7.0},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic Moly 5W-40",r:1}]},
-            Range_Rover_Sport:{e:{o:8.5},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}],vt:[{n:"Voltronic Moly 5W-40",r:1}]}
+            Defender_110:{e:{o:7.0},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]},
+            Range_Rover_Sport:{e:{o:8.5},c:[{n:"Castrol EDGE 0W-20",r:1}],v:[{n:"Valvoline Modern Engine 0W-20",r:1}]}
         }}
     }},
 
    xemay:{label:"Xe máy",brands:{
+        /* --- HONDA --- */
         HONDA:{models:{
-            Wave_Alpha_110:{e:{o:0.8},c:[{n:"Castrol Power1 4T 10W-30",r:1}],v:[{n:"Valvoline Premium 4T 10W-30",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Wave_RSX_110:{e:{o:0.8},c:[{n:"Castrol Power1 4T 10W-30",r:1}],v:[{n:"Valvoline Premium 4T 10W-30",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Future_125_Fi:{e:{o:0.8},c:[{n:"Castrol Power1 4T 10W-30",r:1}],v:[{n:"Valvoline Premium 4T 10W-30",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Dream_100:{e:{o:0.7},c:[{n:"Castrol Activ 4T 20W-40",r:1}],v:[{n:"Valvoline Champ 4T 20W-40",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Vision_110:{e:{o:0.8},c:[{n:"Castrol Power1 Scooter 10W-30",r:1}],v:[{n:"Valvoline Scooter 4T 10W-30",r:1}],vt:[{n:"Voltronic Scooter 4T 5W-40",r:1}]},
-            Air_Blade_125_150:{e:{o:0.8},c:[{n:"Castrol Power1 Scooter Ultimate 5W-40",r:1}],v:[{n:"Valvoline Scooter Ultimate 5W-40",r:1}],vt:[{n:"Voltronic Scooter 4T 5W-40",r:1}]},
-            Air_Blade_160:{e:{o:0.8},c:[{n:"Castrol Power1 Scooter Ultimate 5W-40",r:1}],v:[{n:"Valvoline Scooter Ultimate 5W-40",r:1}],vt:[{n:"Voltronic Scooter 4T 5W-40",r:1}]},
-            SH_125_150i:{e:{o:0.9},c:[{n:"Castrol Power1 Scooter Ultimate 5W-40",r:1}],v:[{n:"Valvoline Scooter Ultimate 5W-40",r:1}],vt:[{n:"Voltronic Scooter 4T 5W-40",r:1}]},
-            SH_160i:{e:{o:0.9},c:[{n:"Castrol Power1 Scooter Ultimate 5W-40",r:1}],v:[{n:"Valvoline Scooter Ultimate 5W-40",r:1}],vt:[{n:"Voltronic Scooter 4T 5W-40",r:1}]},
-            SH_350i:{e:{o:1.4},c:[{n:"Castrol Power1 Scooter Ultimate 5W-40",r:1}],v:[{n:"Valvoline Scooter Ultimate 5W-40",r:1}],vt:[{n:"Voltronic Scooter 4T 5W-40",r:1}]},
-            Vario_125_150:{e:{o:0.8},c:[{n:"Castrol Power1 Scooter Ultimate 5W-40",r:1}],v:[{n:"Valvoline Scooter Ultimate 5W-40",r:1}],vt:[{n:"Voltronic Scooter 4T 5W-40",r:1}]},
-            Vario_160:{e:{o:0.8},c:[{n:"Castrol Power1 Scooter Ultimate 5W-40",r:1}],v:[{n:"Valvoline Scooter Ultimate 5W-40",r:1}],vt:[{n:"Voltronic Scooter 4T 5W-40",r:1}]},
-            Winner_X:{e:{o:1.1},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline SynPower 4T 10W-40",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]},
-            CB150R:{e:{o:1.1},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline SynPower 4T 10W-40",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]},
-            CBR150R:{e:{o:1.1},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline SynPower 4T 10W-40",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]},
-            CB500F_CB500X:{e:{o:2.7},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]},
-            CBR650R:{e:{o:2.7},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]},
-            NSR_150_2T:{e:{o:"Pha xăng"},c:[{n:"Castrol Activ 2T",r:1}],v:[{n:"Valvoline 2T",r:1}],vt:[{n:"Voltronic 2T Moto",r:1}]},
-            Nova_Dash_125_2T:{e:{o:"Pha xăng"},c:[{n:"Castrol Activ 2T",r:1}],v:[{n:"Valvoline 2T",r:1}],vt:[{n:"Voltronic 2T Moto",r:1}]}
+            Wave_Alpha_110:{e:{o:0.8},c:[{n:"Castrol Power1 4T 10W-30",r:1}],v:[{n:"Valvoline Premium 4T 10W-30",r:1}]},
+            Wave_RSX_110:{e:{o:0.8},c:[{n:"Castrol Power1 4T 10W-30",r:1}],v:[{n:"Valvoline Premium 4T 10W-30",r:1}]},
+            Future_125_Fi:{e:{o:0.8},c:[{n:"Castrol Power1 4T 10W-30",r:1}],v:[{n:"Valvoline Premium 4T 10W-30",r:1}]},
+            Dream_100:{e:{o:0.7},c:[{n:"Castrol Activ 4T 20W-40",r:1}],v:[{n:"Valvoline Champ 4T 20W-40",r:1}]},
+            Vision_110:{e:{o:0.8},c:[{n:"Castrol Power1 Scooter 10W-30",r:1}],v:[{n:"Valvoline Scooter 4T 10W-30",r:1}]},
+            Air_Blade_125_150:{e:{o:0.8},c:[{n:"Castrol Power1 Scooter Ultimate 5W-40",r:1}],v:[{n:"Valvoline Scooter Ultimate 5W-40",r:1}]},
+            Air_Blade_160:{e:{o:0.8},c:[{n:"Castrol Power1 Scooter Ultimate 5W-40",r:1}],v:[{n:"Valvoline Scooter Ultimate 5W-40",r:1}]},
+            SH_125_150i:{e:{o:0.9},c:[{n:"Castrol Power1 Scooter Ultimate 5W-40",r:1}],v:[{n:"Valvoline Scooter Ultimate 5W-40",r:1}]},
+            SH_160i:{e:{o:0.9},c:[{n:"Castrol Power1 Scooter Ultimate 5W-40",r:1}],v:[{n:"Valvoline Scooter Ultimate 5W-40",r:1}]},
+            SH_350i:{e:{o:1.4},c:[{n:"Castrol Power1 Scooter Ultimate 5W-40",r:1}],v:[{n:"Valvoline Scooter Ultimate 5W-40",r:1}]},
+            Vario_125_150:{e:{o:0.8},c:[{n:"Castrol Power1 Scooter Ultimate 5W-40",r:1}],v:[{n:"Valvoline Scooter Ultimate 5W-40",r:1}]},
+            Vario_160:{e:{o:0.8},c:[{n:"Castrol Power1 Scooter Ultimate 5W-40",r:1}],v:[{n:"Valvoline Scooter Ultimate 5W-40",r:1}]},
+            Winner_X:{e:{o:1.1},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline SynPower 4T 10W-40",r:1}]},
+            CB150R:{e:{o:1.1},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline SynPower 4T 10W-40",r:1}]},
+            CBR150R:{e:{o:1.1},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline SynPower 4T 10W-40",r:1}]},
+            CB500F_CB500X:{e:{o:2.7},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}]},
+            CBR650R:{e:{o:2.7},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}]},
+            NSR_150_2T:{e:{o:"Pha xăng"},c:[{n:"Castrol Activ 2T",r:1}],v:[{n:"Valvoline 2T",r:1}]},
+            Nova_Dash_125_2T:{e:{o:"Pha xăng"},c:[{n:"Castrol Activ 2T",r:1}],v:[{n:"Valvoline 2T",r:1}]}
         }},
+
+        /* --- YAMAHA --- */
         YAMAHA:{models:{
-            Sirius_Fi:{e:{o:0.8},c:[{n:"Castrol Power1 4T 10W-30",r:1}],v:[{n:"Valvoline Premium 4T 10W-30",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Jupiter_Finn:{e:{o:0.8},c:[{n:"Castrol Power1 4T 10W-30",r:1}],v:[{n:"Valvoline Premium 4T 10W-30",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Exciter_135:{e:{o:0.9},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline SynPower 4T 10W-40",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]},
-            Exciter_150:{e:{o:1.0},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline SynPower 4T 10W-40",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]},
-            Exciter_155_VVA:{e:{o:1.1},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline SynPower 4T 10W-40",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]},
-            Grande_Hybrid:{e:{o:0.8},c:[{n:"Castrol Power1 Scooter 10W-30",r:1}],v:[{n:"Valvoline Scooter 4T 10W-30",r:1}],vt:[{n:"Voltronic Scooter 4T 5W-40",r:1}]},
-            Janus_125:{e:{o:0.8},c:[{n:"Castrol Power1 Scooter 10W-30",r:1}],v:[{n:"Valvoline Scooter 4T 10W-30",r:1}],vt:[{n:"Voltronic Scooter 4T 5W-40",r:1}]},
-            NVX_155:{e:{o:0.9},c:[{n:"Castrol Power1 Scooter Ultimate 5W-40",r:1}],v:[{n:"Valvoline Scooter Ultimate 5W-40",r:1}],vt:[{n:"Voltronic Scooter 4T 5W-40",r:1}]},
-            R3_MT03:{e:{o:2.1},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]},
-            R7_MT07:{e:{o:2.6},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]},
-            Z125R_YaZ_2T:{e:{o:"Pha xăng"},c:[{n:"Castrol Activ 2T",r:1}],v:[{n:"Valvoline 2T",r:1}],vt:[{n:"Voltronic 2T Moto",r:1}]}
+            Sirius_Fi:{e:{o:0.8},c:[{n:"Castrol Power1 4T 10W-30",r:1}],v:[{n:"Valvoline Premium 4T 10W-30",r:1}]},
+            Jupiter_Finn:{e:{o:0.8},c:[{n:"Castrol Power1 4T 10W-30",r:1}],v:[{n:"Valvoline Premium 4T 10W-30",r:1}]},
+            Exciter_135:{e:{o:0.9},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline SynPower 4T 10W-40",r:1}]},
+            Exciter_150:{e:{o:1.0},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline SynPower 4T 10W-40",r:1}]},
+            Exciter_155_VVA:{e:{o:1.1},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline SynPower 4T 10W-40",r:1}]},
+            Grande_Hybrid:{e:{o:0.8},c:[{n:"Castrol Power1 Scooter 10W-30",r:1}],v:[{n:"Valvoline Scooter 4T 10W-30",r:1}]},
+            Janus_125:{e:{o:0.8},c:[{n:"Castrol Power1 Scooter 10W-30",r:1}],v:[{n:"Valvoline Scooter 4T 10W-30",r:1}]},
+            NVX_155:{e:{o:0.9},c:[{n:"Castrol Power1 Scooter Ultimate 5W-40",r:1}],v:[{n:"Valvoline Scooter Ultimate 5W-40",r:1}]},
+            R3_MT03:{e:{o:2.1},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}]},
+            R7_MT07:{e:{o:2.6},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}]},
+            Z125R_YaZ_2T:{e:{o:"Pha xăng"},c:[{n:"Castrol Activ 2T",r:1}],v:[{n:"Valvoline 2T",r:1}]}
         }},
+
+        /* --- SUZUKI --- */
         SUZUKI:{models:{
-            Raider_R150_Fi:{e:{o:1.3},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline SynPower 4T 10W-40",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]},
-            Satria_F150_Fi:{e:{o:1.3},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline SynPower 4T 10W-40",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]},
-            GSX_R150_S150:{e:{o:1.3},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline SynPower 4T 10W-40",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]},
-            Burgman_Street:{e:{o:1.0},c:[{n:"Castrol Power1 Scooter 10W-30",r:1}],v:[{n:"Valvoline Scooter 4T 10W-30",r:1}],vt:[{n:"Voltronic Scooter 4T 5W-40",r:1}]},
-            V_Strom_250:{e:{o:2.4},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]},
-            Xipo_RGV_120_2T:{e:{o:"Pha xăng"},c:[{n:"Castrol Activ 2T",r:1}],v:[{n:"Valvoline 2T",r:1}],vt:[{n:"Voltronic 2T Moto",r:1}]}
+            Raider_R150_Fi:{e:{o:1.3},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline SynPower 4T 10W-40",r:1}]},
+            Satria_F150_Fi:{e:{o:1.3},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline SynPower 4T 10W-40",r:1}]},
+            GSX_R150_S150:{e:{o:1.3},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline SynPower 4T 10W-40",r:1}]},
+            Burgman_Street:{e:{o:1.0},c:[{n:"Castrol Power1 Scooter 10W-30",r:1}],v:[{n:"Valvoline Scooter 4T 10W-30",r:1}]},
+            V_Strom_250:{e:{o:2.4},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}]},
+            Xipo_RGV_120_2T:{e:{o:"Pha xăng"},c:[{n:"Castrol Activ 2T",r:1}],v:[{n:"Valvoline 2T",r:1}]}
         }},
+
+        /* --- PIAGGIO & VESPA --- */
         PIAGGIO_VESPA:{models:{
-            Vespa_Sprint_iGet:{e:{o:1.2},c:[{n:"Castrol Power1 Scooter Ultimate 5W-40",r:1}],v:[{n:"Valvoline Scooter Ultimate 5W-40",r:1}],vt:[{n:"Voltronic Scooter 4T 5W-40",r:1}]},
-            Vespa_Primavera_iGet:{e:{o:1.2},c:[{n:"Castrol Power1 Scooter Ultimate 5W-40",r:1}],v:[{n:"Valvoline Scooter Ultimate 5W-40",r:1}],vt:[{n:"Voltronic Scooter 4T 5W-40",r:1}]},
-            Vespa_GTS_300:{e:{o:1.3},c:[{n:"Castrol Power1 Scooter Ultimate 5W-40",r:1}],v:[{n:"Valvoline Scooter Ultimate 5W-40",r:1}],vt:[{n:"Voltronic Scooter 4T 5W-40",r:1}]},
-            Liberty_125_iGet:{e:{o:1.2},c:[{n:"Castrol Power1 Scooter Ultimate 5W-40",r:1}],v:[{n:"Valvoline Scooter Ultimate 5W-40",r:1}],vt:[{n:"Voltronic Scooter 4T 5W-40",r:1}]},
-            Medley_125_150:{e:{o:1.2},c:[{n:"Castrol Power1 Scooter Ultimate 5W-40",r:1}],v:[{n:"Valvoline Scooter Ultimate 5W-40",r:1}],vt:[{n:"Voltronic Scooter 4T 5W-40",r:1}]}
+            Vespa_Sprint_iGet:{e:{o:1.2},c:[{n:"Castrol Power1 Scooter Ultimate 5W-40",r:1}],v:[{n:"Valvoline Scooter Ultimate 5W-40",r:1}]},
+            Vespa_Primavera_iGet:{e:{o:1.2},c:[{n:"Castrol Power1 Scooter Ultimate 5W-40",r:1}],v:[{n:"Valvoline Scooter Ultimate 5W-40",r:1}]},
+            Vespa_GTS_300:{e:{o:1.3},c:[{n:"Castrol Power1 Scooter Ultimate 5W-40",r:1}],v:[{n:"Valvoline Scooter Ultimate 5W-40",r:1}]},
+            Liberty_125_iGet:{e:{o:1.2},c:[{n:"Castrol Power1 Scooter Ultimate 5W-40",r:1}],v:[{n:"Valvoline Scooter Ultimate 5W-40",r:1}]},
+            Medley_125_150:{e:{o:1.2},c:[{n:"Castrol Power1 Scooter Ultimate 5W-40",r:1}],v:[{n:"Valvoline Scooter Ultimate 5W-40",r:1}]}
         }},
+
+        /* --- KAWASAKI --- */
         KAWASAKI:{models:{
-            Ninja_400_Z400:{e:{o:2.0},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]},
-            Ninja_650_Z650:{e:{o:1.8},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]},
-            Z900:{e:{o:3.4},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]},
-            Z1000:{e:{o:3.8},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]}
+            Ninja_400_Z400:{e:{o:2.0},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}]},
+            Ninja_650_Z650:{e:{o:1.8},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}]},
+            Z900:{e:{o:3.4},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}]},
+            Z1000:{e:{o:3.8},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}]}
         }},
+
+        /* --- DUCATI --- */
         DUCATI:{models:{
-            Scrambler_800:{e:{o:3.2},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]},
-            Monster_937:{e:{o:3.4},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]},
-            Panigale_V4:{e:{o:3.5},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]}
+            Scrambler_800:{e:{o:3.2},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}]},
+            Monster_937:{e:{o:3.4},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}]},
+            Panigale_V4:{e:{o:3.5},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}]}
         }},
+
+        /* --- TRIUMPH --- */
         TRIUMPH:{models:{
-            Trident_660:{e:{o:2.8},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]},
-            Street_Twin_900:{e:{o:3.4},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]},
-            Bonneville_T120:{e:{o:3.4},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]}
+            Trident_660:{e:{o:2.8},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}]},
+            Street_Twin_900:{e:{o:3.4},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}]},
+            Bonneville_T120:{e:{o:3.4},c:[{n:"Castrol Power1 Ultimate 10W-50",r:1}],v:[{n:"Valvoline SynPower 4T 10W-50",r:1}]}
         }},
+
+        /* --- VINFAST_EV (XE ĐIỆN) --- */
         VINFAST_EV:{models:{
-            Evo_200:{e:{o:0},c_gear:[{n:"Castrol Scooter Gear Oil 80W-90",r:1}],v_gear:[{n:"Valvoline Scooter Gear Oil 80W-90",r:1}],vt_gear:[{n:"Voltronic Gear Oil 80W-90 GL-4",r:1}]},
-            Feliz_S:{e:{o:0},c_gear:[{n:"Castrol Scooter Gear Oil 80W-90",r:1}],v_gear:[{n:"Valvoline Scooter Gear Oil 80W-90",r:1}],vt_gear:[{n:"Voltronic Gear Oil 80W-90 GL-4",r:1}]},
-            Klara_S_2022:{e:{o:0},c_gear:[{n:"Castrol Scooter Gear Oil 80W-90",r:1}],v_gear:[{n:"Valvoline Scooter Gear Oil 80W-90",r:1}],vt_gear:[{n:"Voltronic Gear Oil 80W-90 GL-4",r:1}]},
-            Vento_S:{e:{o:0},c_gear:[{n:"Castrol Scooter Gear Oil 80W-90",r:1}],v_gear:[{n:"Valvoline Scooter Gear Oil 80W-90",r:1}],vt_gear:[{n:"Voltronic Gear Oil 80W-90 GL-4",r:1}]},
-            Theon_S:{e:{o:0},c_gear:[{n:"Castrol Scooter Gear Oil 80W-90",r:1}],v_gear:[{n:"Valvoline Scooter Gear Oil 80W-90",r:1}],vt_gear:[{n:"Voltronic Gear Oil 80W-90 GL-4",r:1}]}
+            Evo_200:{e:{o:0},c_gear:[{n:"Castrol Scooter Gear Oil 80W-90",r:1}],v_gear:[{n:"Valvoline Scooter Gear Oil 80W-90",r:1}]},
+            Feliz_S:{e:{o:0},c_gear:[{n:"Castrol Scooter Gear Oil 80W-90",r:1}],v_gear:[{n:"Valvoline Scooter Gear Oil 80W-90",r:1}]},
+            Klara_S_2022:{e:{o:0},c_gear:[{n:"Castrol Scooter Gear Oil 80W-90",r:1}],v_gear:[{n:"Valvoline Scooter Gear Oil 80W-90",r:1}]},
+            Vento_S:{e:{o:0},c_gear:[{n:"Castrol Scooter Gear Oil 80W-90",r:1}],v_gear:[{n:"Valvoline Scooter Gear Oil 80W-90",r:1}]},
+            Theon_S:{e:{o:0},c_gear:[{n:"Castrol Scooter Gear Oil 80W-90",r:1}],v_gear:[{n:"Valvoline Scooter Gear Oil 80W-90",r:1}]}
         }}
     }},
 
    xetai:{label:"Xe tải & Đầu kéo",brands:{
+        /* --- ISUZU --- */
         ISUZU:{models:{
-            QKR_210_Đầu_Vuông:{e:{o:6.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            QKR_270_Đầu_Vuông:{e:{o:6.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            NMR_310:{e:{o:10.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            NPR_400:{e:{o:10.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            NQR_550:{e:{o:10.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            FRR_650:{e:{o:14.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            FVR_900:{e:{o:14.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            FVM_1500_3_Chân:{e:{o:14.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Giga_Đầu_Kéo_420HP:{e:{o:30.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            QKR_210_Đầu_Vuông:{e:{o:6.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]},
+            QKR_270_Đầu_Vuông:{e:{o:6.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]},
+            NMR_310:{e:{o:10.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]},
+            NPR_400:{e:{o:10.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]},
+            NQR_550:{e:{o:10.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]},
+            FRR_650:{e:{o:14.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]},
+            FVR_900:{e:{o:14.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]},
+            FVM_1500_3_Chân:{e:{o:14.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]},
+            Giga_Đầu_Kéo_420HP:{e:{o:30.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]}
         }},
+
+        /* --- HYUNDAI --- */
         HYUNDAI_TRUCK:{models:{
-            New_Porter_H150:{e:{o:7.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Mighty_N250_N250SL:{e:{o:8.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Mighty_110SP_110XL:{e:{o:8.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Mighty_EX8_GTL:{e:{o:8.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            HD320_4_Chân:{e:{o:18.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Xcient_Đầu_Kéo:{e:{o:35.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            New_Porter_H150:{e:{o:7.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]},
+            Mighty_N250_N250SL:{e:{o:8.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]},
+            Mighty_110SP_110XL:{e:{o:8.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]},
+            Mighty_EX8_GTL:{e:{o:8.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]},
+            HD320_4_Chân:{e:{o:18.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]},
+            Xcient_Đầu_Kéo:{e:{o:35.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]}
         }},
+
+        /* --- HINO --- */
         HINO:{models:{
-            XZU650_Series_300:{e:{o:10.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            FC_Series_500_6_Tấn:{e:{o:12.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            FG_Series_500_8_Tấn:{e:{o:16.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            FL_FM_Series_500:{e:{o:16.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            SS1EKV_Đầu_Kéo_700:{e:{o:24.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            XZU650_Series_300:{e:{o:10.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]},
+            FC_Series_500_6_Tấn:{e:{o:12.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]},
+            FG_Series_500_8_Tấn:{e:{o:16.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]},
+            FL_FM_Series_500:{e:{o:16.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]},
+            SS1EKV_Đầu_Kéo_700:{e:{o:24.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]}
         }},
+
+        /* --- THACO --- */
         THACO:{models:{
-            Towner_990:{e:{o:4.0},c:[{n:"Castrol GTX Ultraclean 10W-40",r:1}],v:[{n:"Valvoline Daily Protection 10W-40",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Frontier_K200_K250:{e:{o:6.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Ollin_S490_S700:{e:{o:6.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Auman_C160_C240:{e:{o:18.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Towner_990:{e:{o:4.0},c:[{n:"Castrol GTX Ultraclean 10W-40",r:1}],v:[{n:"Valvoline Daily Protection 10W-40",r:1}]},
+            Frontier_K200_K250:{e:{o:6.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]},
+            Ollin_S490_S700:{e:{o:6.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]},
+            Auman_C160_C240:{e:{o:18.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]}
         }},
+
+        /* --- HOWO - SINOTRUK --- */
         HOWO:{models:{
-            Sitrak_T7H_440HP:{e:{o:38.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            MAX_Đầu_Kéo_460HP:{e:{o:38.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            HW76_Xe_Ben:{e:{o:35.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Sitrak_T7H_440HP:{e:{o:38.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}]},
+            MAX_Đầu_Kéo_460HP:{e:{o:38.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}]},
+            HW76_Xe_Ben:{e:{o:35.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]}
         }},
+
+        /* --- CHENGLONG --- */
         CHENGLONG:{models:{
-            H5_Tải_Thùng:{e:{o:36.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            H7_Đầu_Kéo_445HP:{e:{o:36.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            H5_Tải_Thùng:{e:{o:36.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]},
+            H7_Đầu_Kéo_445HP:{e:{o:36.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]}
         }},
+
+        /* --- DONGFENG --- */
         DONGFENG:{models:{
-            B180_Tải_Thùng_9_Tấn:{e:{o:28.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Hoàng_Huy_Đầu_Kéo_D320:{e:{o:32.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            B180_Tải_Thùng_9_Tấn:{e:{o:28.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]},
+            Hoàng_Huy_Đầu_Kéo_D320:{e:{o:32.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]}
         }},
+
+        /* --- FUSO --- */
         FUSO:{models:{
-            Canter_4_99_6_5:{e:{o:8.5},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Fighter_FJ_3_Chân:{e:{o:15.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Canter_4_99_6_5:{e:{o:8.5},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]},
+            Fighter_FJ_3_Chân:{e:{o:15.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]}
         }},
+
+        /* --- JAC --- */
         JAC:{models:{
-            N350S_3_5_Tấn:{e:{o:6.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            N900_9_Tấn:{e:{o:14.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            A5_Đầu_Kéo_385HP:{e:{o:28.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            N350S_3_5_Tấn:{e:{o:6.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]},
+            N900_9_Tấn:{e:{o:14.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]},
+            A5_Đầu_Kéo_385HP:{e:{o:28.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]}
         }},
+
+        /* --- TERACO --- */
         TERACO:{models:{
-            Tera_100_180:{e:{o:3.5},c:[{n:"Castrol GTX Ultraclean 10W-40",r:1}],v:[{n:"Valvoline Daily Protection 10W-40",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Tera_345SL:{e:{o:6.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Tera_100_180:{e:{o:3.5},c:[{n:"Castrol GTX Ultraclean 10W-40",r:1}],v:[{n:"Valvoline Daily Protection 10W-40",r:1}]},
+            Tera_345SL:{e:{o:6.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]}
         }},
+
+        /* --- SUZUKI TRUCK --- */
         SUZUKI_TRUCK:{models:{
-            Carry_Truck_Pro:{e:{o:3.5},c:[{n:"Castrol MAGNATEC 10W-40",r:1}],v:[{n:"Valvoline Daily Protection 10W-40",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Blind_Van_Cóc:{e:{o:3.5},c:[{n:"Castrol MAGNATEC 10W-40",r:1}],v:[{n:"Valvoline Daily Protection 10W-40",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]}
+            Carry_Truck_Pro:{e:{o:3.5},c:[{n:"Castrol MAGNATEC 10W-40",r:1}],v:[{n:"Valvoline Daily Protection 10W-40",r:1}]},
+            Blind_Van_Cóc:{e:{o:3.5},c:[{n:"Castrol MAGNATEC 10W-40",r:1}],v:[{n:"Valvoline Daily Protection 10W-40",r:1}]}
         }},
+
+        /* --- UD TRUCKS --- */
         UD_TRUCKS:{models:{
-            Quester_Đầu_Kéo:{e:{o:32.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Croner_Tải_Thùng:{e:{o:18.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Quester_Đầu_Kéo:{e:{o:32.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]},
+            Croner_Tải_Thùng:{e:{o:18.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]}
         }},
+
+        /* --- SCANIA --- */
         SCANIA:{models:{
-            R450_Đầu_Kéo:{e:{o:40.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            G410_Đầu_Kéo:{e:{o:40.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            R450_Đầu_Kéo:{e:{o:40.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}]},
+            G410_Đầu_Kéo:{e:{o:40.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}]}
         }}
     }},
 
      thuongmai:{label:"Xe Thương mại",brands:{
+        /* --- THACO BUS --- */
         THACO_BUS:{models:{
-            Mobihome_Premium_34_Phòng:{e:{o:26.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Mobihome_Luxury_22_Phòng:{e:{o:26.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Thaco_Meadow_85S_29_Chỗ:{e:{o:18.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Thaco_Meadow_85S_34_Chỗ:{e:{o:18.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Thaco_Garden_79S_29_Chỗ:{e:{o:14.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Thaco_Bluesky_120S_47_Chỗ:{e:{o:26.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Thaco_Iveco_Daily_16_Chỗ:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Thaco_Iveco_Daily_19_Chỗ:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Mobihome_Premium_34_Phòng:{e:{o:26.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}]},
+            Mobihome_Luxury_22_Phòng:{e:{o:26.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}]},
+            Thaco_Meadow_85S_29_Chỗ:{e:{o:18.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]},
+            Thaco_Meadow_85S_34_Chỗ:{e:{o:18.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]},
+            Thaco_Garden_79S_29_Chỗ:{e:{o:14.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]},
+            Thaco_Bluesky_120S_47_Chỗ:{e:{o:26.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]},
+            Thaco_Iveco_Daily_16_Chỗ:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]},
+            Thaco_Iveco_Daily_19_Chỗ:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]}
         }},
+
+        /* --- HYUNDAI BUS --- */
         HYUNDAI_BUS:{models:{
-            New_County_29_Chỗ:{e:{o:10.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Solati_16_Chỗ_Tiêu_Chuẩn:{e:{o:8.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Solati_Limousine_10_Chỗ:{e:{o:8.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Universe_Advanced_47_Chỗ:{e:{o:24.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Universe_Premium_47_Chỗ:{e:{o:26.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            New_County_29_Chỗ:{e:{o:10.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]},
+            Solati_16_Chỗ_Tiêu_Chuẩn:{e:{o:8.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]},
+            Solati_Limousine_10_Chỗ:{e:{o:8.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]},
+            Universe_Advanced_47_Chỗ:{e:{o:24.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]},
+            Universe_Premium_47_Chỗ:{e:{o:26.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]}
         }},
+
+        /* --- FORD COMMERCIAL --- */
         FORD_BUS:{models:{
-            Transit_Trend_16_Chỗ:{e:{o:8.0},c:[{n:"Castrol MAGNATEC SUV 5W-30",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Transit_Premium_16_Chỗ:{e:{o:8.0},c:[{n:"Castrol MAGNATEC SUV 5W-30",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Transit_Limousine_10_Chỗ:{e:{o:8.0},c:[{n:"Castrol MAGNATEC SUV 5W-30",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Transit_Van_3_Chỗ:{e:{o:8.0},c:[{n:"Castrol MAGNATEC SUV 5W-30",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Transit_Van_6_Chỗ:{e:{o:8.0},c:[{n:"Castrol MAGNATEC SUV 5W-30",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Transit_Trend_16_Chỗ:{e:{o:8.0},c:[{n:"Castrol MAGNATEC SUV 5W-30",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]},
+            Transit_Premium_16_Chỗ:{e:{o:8.0},c:[{n:"Castrol MAGNATEC SUV 5W-30",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]},
+            Transit_Limousine_10_Chỗ:{e:{o:8.0},c:[{n:"Castrol MAGNATEC SUV 5W-30",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]},
+            Transit_Van_3_Chỗ:{e:{o:8.0},c:[{n:"Castrol MAGNATEC SUV 5W-30",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]},
+            Transit_Van_6_Chỗ:{e:{o:8.0},c:[{n:"Castrol MAGNATEC SUV 5W-30",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]}
         }},
+
+        /* --- SAMCO --- */
         SAMCO:{models:{
-            Samco_Growin_29_Chỗ_Bầu_Hơi:{e:{o:12.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Samco_Growin_34_Chỗ_Bầu_Hơi:{e:{o:12.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Samco_Felix_29_Chỗ:{e:{o:10.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Samco_Felix_34_Chỗ:{e:{o:10.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Samco_Allergo_29_Chỗ:{e:{o:10.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Samco_Wenda_47_Chỗ:{e:{o:24.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Samco_Growin_29_Chỗ_Bầu_Hơi:{e:{o:12.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]},
+            Samco_Growin_34_Chỗ_Bầu_Hơi:{e:{o:12.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]},
+            Samco_Felix_29_Chỗ:{e:{o:10.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]},
+            Samco_Felix_34_Chỗ:{e:{o:10.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]},
+            Samco_Allergo_29_Chỗ:{e:{o:10.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]},
+            Samco_Wenda_47_Chỗ:{e:{o:24.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]}
         }},
+
+        /* --- GAZ (Nga) --- */
         GAZ:{models:{
-            Gazelle_Next_17_Chỗ:{e:{o:6.5},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Gazelle_Next_20_Chỗ:{e:{o:6.5},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Gaz_Sobol_NN_Van:{e:{o:6.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Gazelle_Next_17_Chỗ:{e:{o:6.5},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]},
+            Gazelle_Next_20_Chỗ:{e:{o:6.5},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]},
+            Gaz_Sobol_NN_Van:{e:{o:6.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]}
         }},
+
+        /* --- IVECO --- */
         IVECO:{models:{
-            Iveco_Daily_16_Chỗ:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Iveco_Daily_Plus_19_Chỗ:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Iveco_Daily_16_Chỗ:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]},
+            Iveco_Daily_Plus_19_Chỗ:{e:{o:7.5},c:[{n:"Castrol EDGE 5W-30 C3",r:1}],v:[{n:"Valvoline SynPower MST 5W-30",r:1}]}
         }},
+
+        /* --- VINFAST BUS (XE ĐIỆN) --- */
         VINFAST_BUS:{models:{
-            VinBus_eBus_Đô_Thị:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}],vt_gear:[{n:"Voltronic ATF VI",r:1}]},
-            VinBus_eBus_Nội_Đô:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}],vt_gear:[{n:"Voltronic ATF VI",r:1}]},
-            VinBus_eBus_Liên_Tỉnh:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}],vt_gear:[{n:"Voltronic ATF VI",r:1}]}
+            VinBus_eBus_Đô_Thị:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}]},
+            VinBus_eBus_Nội_Đô:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}]},
+            VinBus_eBus_Liên_Tỉnh:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}]}
         }},
+
+        /* --- HÃNG XE BUS ĐIỆN MỚI 2026 --- */
         ZONDA_BUS:{models:{
-            Zonda_E10_City_Bus:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}],vt_gear:[{n:"Voltronic ATF VI",r:1}]},
-            Zonda_E12_Tourist_Bus:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}],vt_gear:[{n:"Voltronic ATF VI",r:1}]}
+            Zonda_E10_City_Bus:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}]},
+            Zonda_E12_Tourist_Bus:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}]}
         }},
+
+        /* --- FUTA ELECTRIC --- */
         FUTA_ELECTRIC:{models:{
-            Futa_Bus_Điện_E70:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}],vt_gear:[{n:"Voltronic ATF VI",r:1}]}
+            Futa_Bus_Điện_E70:{e:{o:0},c_gear:[{n:"Castrol ON EV Transmission Fluid",r:1}],v_gear:[{n:"Valvoline EV Performance Fluid",r:1}]}
         }},
+
+        /* --- TOYOTA & NISSAN --- */
         TOYOTA_COMM:{models:{
-            Hiace_Máy_Dầu_3_0:{e:{o:7.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Hiace_Máy_Xăng_2_7:{e:{o:5.6},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Hiace_Máy_Dầu_3_0:{e:{o:7.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]},
+            Hiace_Máy_Xăng_2_7:{e:{o:5.6},c:[{n:"Castrol EDGE 5W-30",r:1}],v:[{n:"Valvoline SynPower 5W-30",r:1}]}
         }},
         NISSAN_COMM:{models:{
-            Urvan_16_Chỗ:{e:{o:6.5},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Urvan_16_Chỗ:{e:{o:6.5},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]}
         }},
-        TRACOMECO:{models:{ Universe_Noble_K42_42_Chỗ:{e:{o:24.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]} }},
-        KING_LONG:{models:{ Nova_29_Chỗ_Euro_5:{e:{o:12.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]} }},
-        TMT_VAN:{models:{ K05S_Van_2_Chỗ:{e:{o:3.0},c:[{n:"Castrol GTX 10W-40",r:1}],v:[{n:"Valvoline Daily Protection 10W-40",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]},K05S_Van_5_Chỗ:{e:{o:3.0},c:[{n:"Castrol GTX 10W-40",r:1}],v:[{n:"Valvoline Daily Protection 10W-40",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]} }}
+
+        /* --- CÁC HÃNG KHÁC --- */
+        TRACOMECO:{models:{ Universe_Noble_K42_42_Chỗ:{e:{o:24.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]} }},
+        KING_LONG:{models:{ Nova_29_Chỗ_Euro_5:{e:{o:12.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]} }},
+        TMT_VAN:{models:{ K05S_Van_2_Chỗ:{e:{o:3.0},c:[{n:"Castrol GTX 10W-40",r:1}],v:[{n:"Valvoline Daily Protection 10W-40",r:1}]},K05S_Van_5_Chỗ:{e:{o:3.0},c:[{n:"Castrol GTX 10W-40",r:1}],v:[{n:"Valvoline Daily Protection 10W-40",r:1}]} }}
     }},
 
     nongnghiep:{label:"Máy Nông nghiệp",brands:{
+        /* --- KUBOTA (Thị phần số 1) --- */
         KUBOTA:{models:{
-            Máy_Kéo_L3218:{e:{o:7.0},c:[{n:"Castrol CRB Turbomax 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Máy_Kéo_L4018:{e:{o:7.0},c:[{n:"Castrol CRB Turbomax 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Máy_Kéo_L5018:{e:{o:7.0},c:[{n:"Castrol CRB Turbomax 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Máy_Kéo_M6040:{e:{o:9.0},c:[{n:"Castrol CRB Turbomax 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Máy_Kéo_M7040:{e:{o:9.0},c:[{n:"Castrol CRB Turbomax 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Máy_Kéo_M9540:{e:{o:9.0},c:[{n:"Castrol CRB Turbomax 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Máy_Gặt_DC70_Plus:{e:{o:10.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Máy_Gặt_DC93:{e:{o:10.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Máy_Gặt_DC105X:{e:{o:10.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]}
+            Máy_Kéo_L3218:{e:{o:7.0},c:[{n:"Castrol CRB Turbomax 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}],v_gear:[{n:"Valvoline Unitrac 80W",r:1}]},
+            Máy_Kéo_L4018:{e:{o:7.0},c:[{n:"Castrol CRB Turbomax 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}],v_gear:[{n:"Valvoline Unitrac 80W",r:1}]},
+            Máy_Kéo_L5018:{e:{o:7.0},c:[{n:"Castrol CRB Turbomax 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}],v_gear:[{n:"Valvoline Unitrac 80W",r:1}]},
+            Máy_Kéo_M6040:{e:{o:9.0},c:[{n:"Castrol CRB Turbomax 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}],v_gear:[{n:"Valvoline Unitrac 80W",r:1}]},
+            Máy_Kéo_M7040:{e:{o:9.0},c:[{n:"Castrol CRB Turbomax 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}],v_gear:[{n:"Valvoline Unitrac 80W",r:1}]},
+            Máy_Kéo_M9540:{e:{o:9.0},c:[{n:"Castrol CRB Turbomax 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}],v_gear:[{n:"Valvoline Unitrac 80W",r:1}]},
+            Máy_Gặt_DC70_Plus:{e:{o:10.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],v_gear:[{n:"Valvoline Unitrac 80W",r:1}]},
+            Máy_Gặt_DC93:{e:{o:10.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],v_gear:[{n:"Valvoline Unitrac 80W",r:1}]},
+            Máy_Gặt_DC105X:{e:{o:10.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],v_gear:[{n:"Valvoline Unitrac 80W",r:1}]}
         }},
+
+        /* --- YANMAR (Nhật Bản) --- */
         YANMAR:{models:{
-            Máy_Kéo_YM351A:{e:{o:8.0},c:[{n:"Castrol CRB Multi 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Máy_Kéo_YM357A:{e:{o:8.0},c:[{n:"Castrol CRB Multi 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Máy_Kéo_EF494T:{e:{o:8.0},c:[{n:"Castrol CRB Multi 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Máy_Gặt_YH850:{e:{o:9.0},c:[{n:"Castrol CRB Multi 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Máy_Gặt_YH1100:{e:{o:9.0},c:[{n:"Castrol CRB Multi 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]}
+            Máy_Kéo_YM351A:{e:{o:8.0},c:[{n:"Castrol CRB Multi 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}]},
+            Máy_Kéo_YM357A:{e:{o:8.0},c:[{n:"Castrol CRB Multi 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}]},
+            Máy_Kéo_EF494T:{e:{o:8.0},c:[{n:"Castrol CRB Multi 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}]},
+            Máy_Gặt_YH850:{e:{o:9.0},c:[{n:"Castrol CRB Multi 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}]},
+            Máy_Gặt_YH1100:{e:{o:9.0},c:[{n:"Castrol CRB Multi 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}]}
         }},
+
+        /* --- JOHN DEERE (Hoa Kỳ) --- */
         JOHN_DEERE:{models:{
-            Máy_Kéo_3036E:{e:{o:8.5},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Kéo_5042D:{e:{o:8.5},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Kéo_5050D:{e:{o:8.5},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Kéo_6110M:{e:{o:15.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Máy_Kéo_3036E:{e:{o:8.5},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]},
+            Máy_Kéo_5042D:{e:{o:8.5},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]},
+            Máy_Kéo_5050D:{e:{o:8.5},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]},
+            Máy_Kéo_6110M:{e:{o:15.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]}
         }},
+
+        /* --- NEW HOLLAND --- */
         NEW_HOLLAND:{models:{
-            Máy_Kéo_TT45:{e:{o:9.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Kéo_TT55:{e:{o:9.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Kéo_TT75:{e:{o:9.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Kéo_TD5_110:{e:{o:12.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Máy_Kéo_TT45:{e:{o:9.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]},
+            Máy_Kéo_TT55:{e:{o:9.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]},
+            Máy_Kéo_TT75:{e:{o:9.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]},
+            Máy_Kéo_TD5_110:{e:{o:12.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]}
         }},
+
+        /* --- LOVOL - THACO --- */
         LOVOL_AGRI:{models:{
-            Máy_Kéo_M504:{e:{o:8.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Kéo_M754:{e:{o:10.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Kéo_M904:{e:{o:12.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Kéo_M1104:{e:{o:14.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Máy_Kéo_M504:{e:{o:8.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]},
+            Máy_Kéo_M754:{e:{o:10.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]},
+            Máy_Kéo_M904:{e:{o:12.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]},
+            Máy_Kéo_M1104:{e:{o:14.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]}
         }},
+
+        /* --- ISEKI (Nhật Bản - Hàng bãi/mới) --- */
         ISEKI:{models:{
-            Máy_Kéo_NT540:{e:{o:7.0},c:[{n:"Castrol CRB Multi 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Máy_Kéo_NT554:{e:{o:7.0},c:[{n:"Castrol CRB Multi 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Máy_Kéo_TJ75:{e:{o:9.0},c:[{n:"Castrol CRB Multi 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]}
+            Máy_Kéo_NT540:{e:{o:7.0},c:[{n:"Castrol CRB Multi 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}]},
+            Máy_Kéo_NT554:{e:{o:7.0},c:[{n:"Castrol CRB Multi 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}]},
+            Máy_Kéo_TJ75:{e:{o:9.0},c:[{n:"Castrol CRB Multi 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}]}
         }},
-        MAHINDRA:{models:{ Máy_Kéo_455:{e:{o:8.0},c:[{n:"Castrol CRB Multi 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]},Máy_Kéo_605:{e:{o:10.0},c:[{n:"Castrol CRB Multi 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]} }},
-        BELARUS:{models:{ MTZ_820_Máy_Kéo:{e:{o:12.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},MTZ_1025_Máy_Kéo:{e:{o:15.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]} }},
-        MASSEY_FERGUSON:{models:{ MF_2635_Máy_Kéo:{e:{o:10.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},MF_4708_Máy_Kéo:{e:{o:12.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]} }},
-        VEAM_AGRI:{models:{ Veam_4500_Máy_Kéo:{e:{o:7.0},c:[{n:"Castrol CRB Multi 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}],vt:[{n:"Voltronic Energy Plus 10W-40",r:1}]} }},
-        ZETOR:{models:{ Zetor_Proxima_100:{e:{o:12.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]} }}
+
+        /* --- CÁC HÃNG KHÁC --- */
+        MAHINDRA:{models:{ Máy_Kéo_455:{e:{o:8.0},c:[{n:"Castrol CRB Multi 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}]},Máy_Kéo_605:{e:{o:10.0},c:[{n:"Castrol CRB Multi 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}]} }},
+        BELARUS:{models:{ MTZ_820_Máy_Kéo:{e:{o:12.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]},MTZ_1025_Máy_Kéo:{e:{o:15.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]} }},
+        MASSEY_FERGUSON:{models:{ MF_2635_Máy_Kéo:{e:{o:10.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]},MF_4708_Máy_Kéo:{e:{o:12.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]} }},
+        VEAM_AGRI:{models:{ Veam_4500_Máy_Kéo:{e:{o:7.0},c:[{n:"Castrol CRB Multi 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}]} }},
+        ZETOR:{models:{ Zetor_Proxima_100:{e:{o:12.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]} }}
     }},
 
     congtrinh:{label:"Xe công trình",brands:{
+        /* --- KOMATSU (Nhật Bản - Phổ biến nhất) --- */
         KOMATSU:{models:{
-            Máy_Xúc_Đào_PC130:{e:{o:14.0},c:[{n:"Castrol CRB Turbomax 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Xúc_Đào_PC200:{e:{o:24.0},c:[{n:"Castrol CRB Turbomax 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Xúc_Đào_PC300:{e:{o:38.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Xúc_Đào_PC450:{e:{o:45.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Xúc_Lật_WA320:{e:{o:20.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Xúc_Lật_WA470:{e:{o:28.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Ủi_D65P:{e:{o:24.0},c:[{n:"Castrol CRB Turbomax 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Máy_Xúc_Đào_PC130:{e:{o:14.0},c:[{n:"Castrol CRB Turbomax 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}]},
+            Máy_Xúc_Đào_PC200:{e:{o:24.0},c:[{n:"Castrol CRB Turbomax 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}]},
+            Máy_Xúc_Đào_PC300:{e:{o:38.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]},
+            Máy_Xúc_Đào_PC450:{e:{o:45.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]},
+            Máy_Xúc_Lật_WA320:{e:{o:20.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]},
+            Máy_Xúc_Lật_WA470:{e:{o:28.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]},
+            Máy_Ủi_D65P:{e:{o:24.0},c:[{n:"Castrol CRB Turbomax 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}]}
         }},
+
+        /* --- CATERPILLAR (Mỹ - Động cơ Cummins/CAT) --- */
         CATERPILLAR:{models:{
-            Máy_Xúc_Đào_CAT_320_GC:{e:{o:25.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Xúc_Đào_CAT_323:{e:{o:25.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Xúc_Đào_CAT_330:{e:{o:32.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Xúc_Đào_CAT_349:{e:{o:45.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Ủi_CAT_D6R:{e:{o:28.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Máy_Xúc_Đào_CAT_320_GC:{e:{o:25.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}]},
+            Máy_Xúc_Đào_CAT_323:{e:{o:25.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}]},
+            Máy_Xúc_Đào_CAT_330:{e:{o:32.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}]},
+            Máy_Xúc_Đào_CAT_349:{e:{o:45.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}]},
+            Máy_Ủi_CAT_D6R:{e:{o:28.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]}
         }},
+
+        /* --- HITACHI (Nhật Bản) --- */
         HITACHI:{models:{
-            Máy_Xúc_Đào_ZX130:{e:{o:15.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Xúc_Đào_ZX200:{e:{o:25.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Xúc_Đào_ZX330:{e:{o:35.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Xúc_Đào_ZX470:{e:{o:45.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Máy_Xúc_Đào_ZX130:{e:{o:15.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]},
+            Máy_Xúc_Đào_ZX200:{e:{o:25.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]},
+            Máy_Xúc_Đào_ZX330:{e:{o:35.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]},
+            Máy_Xúc_Đào_ZX470:{e:{o:45.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]}
         }},
+
+        /* --- KOBELCO (Nhật Bản) --- */
         KOBELCO:{models:{
-            Máy_Xúc_Đào_SK200_8:{e:{o:22.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Xúc_Đào_SK250_8:{e:{o:24.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Xúc_Đào_SK330_8:{e:{o:35.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Xúc_Đào_SK500:{e:{o:45.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Máy_Xúc_Đào_SK200_8:{e:{o:22.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]},
+            Máy_Xúc_Đào_SK250_8:{e:{o:24.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]},
+            Máy_Xúc_Đào_SK330_8:{e:{o:35.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]},
+            Máy_Xúc_Đào_SK500:{e:{o:45.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]}
         }},
+
+        /* --- DEVELON_DOOSAN (Hàn Quốc) --- */
         DEVELON:{models:{
-            Máy_Xúc_Đào_DX140W:{e:{o:15.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Xúc_Đào_DX225LCA:{e:{o:24.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Xúc_Đào_DX300LCA:{e:{o:32.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Xúc_Đào_DX480LCA:{e:{o:36.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Máy_Xúc_Đào_DX140W:{e:{o:15.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]},
+            Máy_Xúc_Đào_DX225LCA:{e:{o:24.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]},
+            Máy_Xúc_Đào_DX300LCA:{e:{o:32.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]},
+            Máy_Xúc_Đào_DX480LCA:{e:{o:36.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]}
         }},
+
+        /* --- HYUNDAI CONSTRUCTION --- */
         HYUNDAI_CONSTR:{models:{
-            Máy_Xúc_Đào_R210_R220:{e:{o:24.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Xúc_Đào_HX300:{e:{o:35.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Xúc_Lật_HL760:{e:{o:25.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Máy_Xúc_Đào_R210_R220:{e:{o:24.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]},
+            Máy_Xúc_Đào_HX300:{e:{o:35.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]},
+            Máy_Xúc_Lật_HL760:{e:{o:25.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]}
         }},
+
+        /* --- VOLVO_CE (Thụy Điển) --- */
         VOLVO_CE:{models:{
-            Máy_Xúc_Đào_EC210:{e:{o:25.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Xúc_Đào_EC300:{e:{o:32.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Xúc_Lật_L120H:{e:{o:24.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Máy_Xúc_Đào_EC210:{e:{o:25.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}]},
+            Máy_Xúc_Đào_EC300:{e:{o:32.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}]},
+            Máy_Xúc_Lật_L120H:{e:{o:24.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}]}
         }},
+
+        /* --- LIUGONG & XCMG (Trung Quốc) --- */
         LIUGONG:{models:{
-            Máy_Xúc_Lật_CLG836:{e:{o:16.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Xúc_Lật_CLG856H:{e:{o:20.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Xúc_Đào_CLG922E:{e:{o:22.0},c:[{n:"Castrol VECTON 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Máy_Xúc_Lật_CLG836:{e:{o:16.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]},
+            Máy_Xúc_Lật_CLG856H:{e:{o:20.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]},
+            Máy_Xúc_Đào_CLG922E:{e:{o:22.0},c:[{n:"Castrol VECTON 15W-40",r:1}]}
         }},
         XCMG:{models:{
-            Máy_Xúc_Lật_LW500FN:{e:{o:20.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Xe_Lu_Rung_XS143Vi:{e:{o:18.0},c:[{n:"Castrol VECTON 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Máy_Xúc_Lật_LW500FN:{e:{o:20.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]},
+            Xe_Lu_Rung_XS143Vi:{e:{o:18.0},c:[{n:"Castrol VECTON 15W-40",r:1}]}
         }},
+
+        /* --- SANY & SDLG --- */
         SANY:{models:{
-            Máy_Xúc_Đào_SY215C:{e:{o:22.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Xúc_Đào_SY365C:{e:{o:32.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Máy_Xúc_Đào_SY215C:{e:{o:22.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]},
+            Máy_Xúc_Đào_SY365C:{e:{o:32.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]}
         }},
         SDLG:{models:{
-            Máy_Xúc_Lật_LG936L:{e:{o:16.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Xúc_Lật_LG956L:{e:{o:20.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Máy_Xúc_Lật_LG936L:{e:{o:16.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]},
+            Máy_Xúc_Lật_LG956L:{e:{o:20.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]}
         }},
-        BOBCAT:{models:{ Máy_Xúc_Lật_Mini_S450:{e:{o:8.5},c:[{n:"Castrol VECTON 10W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]} }},
-        JCB:{models:{ Máy_Xúc_Đào_3CX_4CX:{e:{o:14.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]} }}
+
+        /* --- BOBCAT & JCB --- */
+        BOBCAT:{models:{ Máy_Xúc_Lật_Mini_S450:{e:{o:8.5},c:[{n:"Castrol VECTON 10W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]} }},
+        JCB:{models:{ Máy_Xúc_Đào_3CX_4CX:{e:{o:14.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 15W-40",r:1}]} }}
     }},
 
     congnghiep:{label:"Công nghiệp",brands:{
+        /* --- MÁY NÉN KHÍ TRỤC VÍT (Screw Compressors) --- */
         ATLAS_COPCO:{models:{
-            Máy_Nén_Khí_Trục_Vít_GA_Series:{e:{o:0},c_gear:[{n:"Castrol Aircol PD 46",r:1}],v_gear:[{n:"Valvoline SynGard AC 8000",r:1}],vt_gear:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Máy_Nén_Khí_Trục_Vít_GX_Series:{e:{o:0},c_gear:[{n:"Castrol Aircol PD 46",r:1}],v_gear:[{n:"Valvoline SynGard AC 8000",r:1}],vt_gear:[{n:"Voltronic Energy Plus 10W-40",r:1}]}
+            Máy_Nén_Khí_Trục_Vít_GA_Series:{e:{o:0},c_gear:[{n:"Castrol Aircol PD 46",r:1}],v_gear:[{n:"Valvoline SynGard AC 8000",r:1}]},
+            Máy_Nén_Khí_Trục_Vít_GX_Series:{e:{o:0},c_gear:[{n:"Castrol Aircol PD 46",r:1}],v_gear:[{n:"Valvoline SynGard AC 8000",r:1}]}
         }},
         HITACHI_INDUSTRIAL:{models:{
-            Máy_Nén_Khí_Trục_Vít_OSP_Series:{e:{o:0},c_gear:[{n:"Castrol Aircol PD 46",r:1}],v_gear:[{n:"Valvoline SynGard AC 8000",r:1}],vt_gear:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Máy_Nén_Khí_Trục_Vít_HISCREW:{e:{o:0},c_gear:[{n:"Castrol Aircol PD 46",r:1}],v_gear:[{n:"Valvoline SynGard AC 8000",r:1}],vt_gear:[{n:"Voltronic Energy Plus 10W-40",r:1}]}
+            Máy_Nén_Khí_Trục_Vít_OSP_Series:{e:{o:0},c_gear:[{n:"Castrol Aircol PD 46",r:1}],v_gear:[{n:"Valvoline SynGard AC 8000",r:1}]},
+            Máy_Nén_Khí_Trục_Vít_HISCREW:{e:{o:0},c_gear:[{n:"Castrol Aircol PD 46",r:1}],v_gear:[{n:"Valvoline SynGard AC 8000",r:1}]}
         }},
         FUSHENG:{models:{
-            Máy_Nén_Khí_Trục_Vít_SA_Series:{e:{o:0},c_gear:[{n:"Castrol Aircol PD 46",r:1}],v_gear:[{n:"Valvoline SynGard AC 8000",r:1}],vt_gear:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Máy_Nén_Khí_Piston_VA_Series:{e:{o:0},c_gear:[{n:"Castrol Aircol VDL 100",r:1}],v_gear:[{n:"Valvoline SynGard AC 1500",r:1}],vt_gear:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Máy_Nén_Khí_Piston_TA_Series:{e:{o:0},c_gear:[{n:"Castrol Aircol VDL 100",r:1}],v_gear:[{n:"Valvoline SynGard AC 1500",r:1}],vt_gear:[{n:"Voltronic Energy Plus 10W-40",r:1}]}
+            Máy_Nén_Khí_Trục_Vít_SA_Series:{e:{o:0},c_gear:[{n:"Castrol Aircol PD 46",r:1}],v_gear:[{n:"Valvoline SynGard AC 8000",r:1}]},
+            Máy_Nén_Khí_Piston_VA_Series:{e:{o:0},c_gear:[{n:"Castrol Aircol VDL 100",r:1}],v_gear:[{n:"Valvoline SynGard AC 1500",r:1}]},
+            Máy_Nén_Khí_Piston_TA_Series:{e:{o:0},c_gear:[{n:"Castrol Aircol VDL 100",r:1}],v_gear:[{n:"Valvoline SynGard AC 1500",r:1}]}
         }},
         INGERSOLL_RAND:{models:{
-            Máy_Nén_Khí_Trục_Vít_R_Series:{e:{o:0},c_gear:[{n:"Castrol Aircol PD 46",r:1}],v_gear:[{n:"Valvoline SynGard AC 8000",r:1}],vt_gear:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Máy_Nén_Khí_Trục_Vít_UP6_Series:{e:{o:0},c_gear:[{n:"Castrol Aircol PD 46",r:1}],v_gear:[{n:"Valvoline SynGard AC 8000",r:1}],vt_gear:[{n:"Voltronic Energy Plus 10W-40",r:1}]}
+            Máy_Nén_Khí_Trục_Vít_R_Series:{e:{o:0},c_gear:[{n:"Castrol Aircol PD 46",r:1}],v_gear:[{n:"Valvoline SynGard AC 8000",r:1}]},
+            Máy_Nén_Khí_Trục_Vít_UP6_Series:{e:{o:0},c_gear:[{n:"Castrol Aircol PD 46",r:1}],v_gear:[{n:"Valvoline SynGard AC 8000",r:1}]}
         }},
         KOBELCO_COMP:{models:{
-            Máy_Nén_Khí_Trục_Vít_KOBELION_AG:{e:{o:0},c_gear:[{n:"Castrol Aircol PD 46",r:1}],v_gear:[{n:"Valvoline SynGard AC 8000",r:1}],vt_gear:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Máy_Nén_Khí_Trục_Vít_KOBELION_SG:{e:{o:0},c_gear:[{n:"Castrol Aircol PD 46",r:1}],v_gear:[{n:"Valvoline SynGard AC 8000",r:1}],vt_gear:[{n:"Voltronic Energy Plus 10W-40",r:1}]}
+            Máy_Nén_Khí_Trục_Vít_KOBELION_AG:{e:{o:0},c_gear:[{n:"Castrol Aircol PD 46",r:1}],v_gear:[{n:"Valvoline SynGard AC 8000",r:1}]},
+            Máy_Nén_Khí_Trục_Vít_KOBELION_SG:{e:{o:0},c_gear:[{n:"Castrol Aircol PD 46",r:1}],v_gear:[{n:"Valvoline SynGard AC 8000",r:1}]}
         }},
+
+        /* --- MÁY PHÁT ĐIỆN CÔNG NGHIỆP (Generators) --- */
         CUMMINS_POWER:{models:{
-            Máy_Phát_Điện_Dưới_500kVA:{e:{o:38.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8100 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Phát_Điện_Trên_500kVA:{e:{o:60.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Máy_Phát_Điện_Dưới_500kVA:{e:{o:38.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8100 15W-40",r:1}]},
+            Máy_Phát_Điện_Trên_500kVA:{e:{o:60.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}]}
         }},
         DENYO_GENERATOR:{models:{
-            Máy_Phát_Điện_Cách_Âm_DCA_Series:{e:{o:25.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Máy_Phát_Điện_Di_Động_TLG_Series:{e:{o:15.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Máy_Phát_Điện_Cách_Âm_DCA_Series:{e:{o:25.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]},
+            Máy_Phát_Điện_Di_Động_TLG_Series:{e:{o:15.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]}
         }},
         MITSUBISHI_GEN:{models:{
-            Máy_Phát_Điện_Động_Cơ_Mitsubishi:{e:{o:45.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Máy_Phát_Điện_Động_Cơ_Mitsubishi:{e:{o:45.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]}
         }},
+
+        /* --- TRUYỀN ĐỘNG & THỦY LỰC NHÀ MÁY --- */
         SEW_EURODRIVE:{models:{
-            Hộp_Giảm_Tốc_Bánh_Răng_Thẳng:{e:{o:0},c_gear:[{n:"Castrol Optigear BM 220",r:1}],v_gear:[{n:"Valvoline SynPower Gear Oil 220",r:1}],vt_gear:[{n:"Voltronic Gear Oil 80W-90 GL-4",r:1}]},
-            Hộp_Giảm_Tốc_Bánh_Răng_Côn:{e:{o:0},c_gear:[{n:"Castrol Optigear BM 320",r:1}],v_gear:[{n:"Valvoline SynPower Gear Oil 320",r:1}],vt_gear:[{n:"Voltronic Gear Oil 80W-90 GL-4",r:1}]}
+            Hộp_Giảm_Tốc_Bánh_Răng_Thẳng:{e:{o:0},c_gear:[{n:"Castrol Optigear BM 220",r:1}],v_gear:[{n:"Valvoline SynPower Gear Oil 220",r:1}]},
+            Hộp_Giảm_Tốc_Bánh_Răng_Côn:{e:{o:0},c_gear:[{n:"Castrol Optigear BM 320",r:1}],v_gear:[{n:"Valvoline SynPower Gear Oil 320",r:1}]}
         }},
         PLASTIC_INJECTION:{models:{
-            Máy_Ép_Nhựa_Hệ_Thủy_Lực_46:{e:{o:0},c_gear:[{n:"Castrol Hyspin HVI 46",r:1}],v_gear:[{n:"Valvoline Ultramax HVLP 46",r:1}],vt_gear:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Máy_Ép_Nhựa_Hệ_Thủy_Lực_68:{e:{o:0},c_gear:[{n:"Castrol Hyspin HVI 68",r:1}],v_gear:[{n:"Valvoline Ultramax HVLP 68",r:1}],vt_gear:[{n:"Voltronic Energy Plus 10W-40",r:1}]}
+            Máy_Ép_Nhựa_Hệ_Thủy_Lực_46:{e:{o:0},c_gear:[{n:"Castrol Hyspin HVI 46",r:1}],v_gear:[{n:"Valvoline Ultramax HVLP 46",r:1}]},
+            Máy_Ép_Nhựa_Hệ_Thủy_Lực_68:{e:{o:0},c_gear:[{n:"Castrol Hyspin HVI 68",r:1}],v_gear:[{n:"Valvoline Ultramax HVLP 68",r:1}]}
         }},
         MACHINE_TOOLS:{models:{
-            Máy_Công_Cụ_CNC_Trung_Tâm_Gia_Công:{e:{o:0},c_gear:[{n:"Castrol Magna SW 68 (Dầu rãnh trượt)",r:1}],v_gear:[{n:"Valvoline Way Oil 68",r:1}],vt_gear:[{n:"Voltronic Energy Plus 10W-40",r:1}]},
-            Máy_Chấn_Dập_Thủy_Lực_Công_Suất_Lớn:{e:{o:0},c_gear:[{n:"Castrol Hyspin AWH-M 68",r:1}],v_gear:[{n:"Valvoline Ultramax HVLP 68",r:1}],vt_gear:[{n:"Voltronic Energy Plus 10W-40",r:1}]}
+            Máy_Công_Cụ_CNC_Trung_Tâm_Gia_Công:{e:{o:0},c_gear:[{n:"Castrol Magna SW 68 (Dầu rãnh trượt)",r:1}],v_gear:[{n:"Valvoline Way Oil 68",r:1}]},
+            Máy_Chấn_Dập_Thủy_Lực_Công_Suất_Lớn:{e:{o:0},c_gear:[{n:"Castrol Hyspin AWH-M 68",r:1}],v_gear:[{n:"Valvoline Ultramax HVLP 68",r:1}]}
         }},
-        SULLAIR_COMP:{models:{ Máy_Nén_Khí_LS_Series:{e:{o:0},c_gear:[{n:"Castrol Aircol PD 46",r:1}],v_gear:[{n:"Valvoline SynGard AC 8000",r:1}],vt_gear:[{n:"Voltronic Energy Plus 10W-40",r:1}]} }},
-        KAESER_COMP:{models:{ Máy_Nén_Khí_Sigma_Profile:{e:{o:0},c_gear:[{n:"Castrol Aircol PD 46",r:1}],v_gear:[{n:"Valvoline SynGard AC 8000",r:1}],vt_gear:[{n:"Voltronic Energy Plus 10W-40",r:1}]} }},
-        PEGASUS_VN:{models:{ Máy_Nén_Khí_Piston_VN:{e:{o:0},c_gear:[{n:"Castrol Aircol VDL 100",r:1}],v_gear:[{n:"Valvoline SynGard AC 1500",r:1}],vt_gear:[{n:"Voltronic Energy Plus 10W-40",r:1}]} }}
+
+        /* --- HÃNG PHỔ BIẾN KHÁC --- */
+        SULLAIR_COMP:{models:{ Máy_Nén_Khí_LS_Series:{e:{o:0},c_gear:[{n:"Castrol Aircol PD 46",r:1}],v_gear:[{n:"Valvoline SynGard AC 8000",r:1}]} }},
+        KAESER_COMP:{models:{ Máy_Nén_Khí_Sigma_Profile:{e:{o:0},c_gear:[{n:"Castrol Aircol PD 46",r:1}],v_gear:[{n:"Valvoline SynGard AC 8000",r:1}]} }},
+        PEGASUS_VN:{models:{ Máy_Nén_Khí_Piston_VN:{e:{o:0},c_gear:[{n:"Castrol Aircol VDL 100",r:1}],v_gear:[{n:"Valvoline SynGard AC 1500",r:1}]} }}
     }},
 
     hanghai:{label:"Hàng hải",brands:{
+        /* --- YAMAHA MARINE (Dẫn đầu máy gắn ngoài) --- */
         YAMAHA_OUTBOARDS:{models:{
-            Máy_Gắn_Ngoài_2_Thì_Pha_Xăng:{e:{o:"Pha xăng"},c:[{n:"Castrol Activ 2T",r:1}],v:[{n:"Valvoline 2T Outboard",r:1}],vt:[{n:"Voltronic 2T Moto",r:1}]},
-            Máy_Gắn_Ngoài_4_Thì_F9_9_F25:{e:{o:1.6},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline Marine 4-Stroke 10W-40",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]},
-            Máy_Gắn_Ngoài_4_Thì_F40_F90:{e:{o:3.5},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline Marine 4-Stroke 10W-40",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]},
-            Máy_Gắn_Ngoài_4_Thì_F100_F150:{e:{o:4.5},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline Marine 4-Stroke 10W-40",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]},
-            Máy_Gắn_Ngoài_4_Thì_F200_F350:{e:{o:6.5},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline Marine 4-Stroke 10W-40",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]}
+            Máy_Gắn_Ngoài_2_Thì_Pha_Xăng:{e:{o:"Pha xăng"},c:[{n:"Castrol Activ 2T",r:1}],v:[{n:"Valvoline 2T Outboard",r:1}]},
+            Máy_Gắn_Ngoài_4_Thì_F9_9_F25:{e:{o:1.6},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline Marine 4-Stroke 10W-40",r:1}]},
+            Máy_Gắn_Ngoài_4_Thì_F40_F90:{e:{o:3.5},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline Marine 4-Stroke 10W-40",r:1}]},
+            Máy_Gắn_Ngoài_4_Thì_F100_F150:{e:{o:4.5},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline Marine 4-Stroke 10W-40",r:1}]},
+            Máy_Gắn_Ngoài_4_Thì_F200_F350:{e:{o:6.5},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline Marine 4-Stroke 10W-40",r:1}]}
         }},
+
+        /* --- SUZUKI MARINE --- */
         SUZUKI_MARINE:{models:{
-            Máy_Gắn_Ngoài_4_Thì_DF20_DF60:{e:{o:2.5},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline Marine 4-Stroke 10W-40",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]},
-            Máy_Gắn_Ngoài_4_Thì_DF70_DF140:{e:{o:4.0},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline Marine 4-Stroke 10W-40",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]},
-            Máy_Gắn_Ngoài_4_Thì_DF150_DF350:{e:{o:8.0},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline Marine 4-Stroke 10W-40",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]}
+            Máy_Gắn_Ngoài_4_Thì_DF20_DF60:{e:{o:2.5},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline Marine 4-Stroke 10W-40",r:1}]},
+            Máy_Gắn_Ngoài_4_Thì_DF70_DF140:{e:{o:4.0},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline Marine 4-Stroke 10W-40",r:1}]},
+            Máy_Gắn_Ngoài_4_Thì_DF150_DF350:{e:{o:8.0},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline Marine 4-Stroke 10W-40",r:1}]}
         }},
+
+        /* --- HONDA MARINE --- */
         HONDA_MARINE:{models:{
-            Máy_Gắn_Ngoài_4_Thì_BF20_BF50:{e:{o:2.0},c:[{n:"Castrol Power1 Ultimate 10W-30",r:1}],v:[{n:"Valvoline Marine 4-Stroke 10W-30",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]},
-            Máy_Gắn_Ngoài_4_Thì_BF75_BF150:{e:{o:4.5},c:[{n:"Castrol Power1 Ultimate 10W-30",r:1}],v:[{n:"Valvoline Marine 4-Stroke 10W-30",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]},
-            Máy_Gắn_Ngoài_4_Thì_BF200_BF350:{e:{o:7.8},c:[{n:"Castrol Power1 Ultimate 10W-30",r:1}],v:[{n:"Valvoline Marine 4-Stroke 10W-30",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]}
+            Máy_Gắn_Ngoài_4_Thì_BF20_BF50:{e:{o:2.0},c:[{n:"Castrol Power1 Ultimate 10W-30",r:1}],v:[{n:"Valvoline Marine 4-Stroke 10W-30",r:1}]},
+            Máy_Gắn_Ngoài_4_Thì_BF75_BF150:{e:{o:4.5},c:[{n:"Castrol Power1 Ultimate 10W-30",r:1}],v:[{n:"Valvoline Marine 4-Stroke 10W-30",r:1}]},
+            Máy_Gắn_Ngoài_4_Thì_BF200_BF350:{e:{o:7.8},c:[{n:"Castrol Power1 Ultimate 10W-30",r:1}],v:[{n:"Valvoline Marine 4-Stroke 10W-30",r:1}]}
         }},
+
+        /* --- MERCURY MARINE --- */
         MERCURY_MARINE:{models:{
-            Máy_Gắn_Ngoài_OptiMax_2_Thì:{e:{o:"Pha xăng"},c:[{n:"Castrol Activ 2T",r:1}],v:[{n:"Valvoline 2T Outboard",r:1}],vt:[{n:"Voltronic 2T Moto",r:1}]},
-            Máy_Gắn_Ngoài_Verado_4_Thì:{e:{o:6.0},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline Marine 4-Stroke 10W-40",r:1}],vt:[{n:"Voltronic Moto 4T 10W-40",r:1}]}
+            Máy_Gắn_Ngoài_OptiMax_2_Thì:{e:{o:"Pha xăng"},c:[{n:"Castrol Activ 2T",r:1}],v:[{n:"Valvoline 2T Outboard",r:1}]},
+            Máy_Gắn_Ngoài_Verado_4_Thì:{e:{o:6.0},c:[{n:"Castrol Power1 Ultimate 10W-40",r:1}],v:[{n:"Valvoline Marine 4-Stroke 10W-40",r:1}]}
         }},
+
+        /* --- CUMMINS MARINE (Máy thủy hạng nặng) --- */
         CUMMINS_MARINE:{models:{
-            Động_Cơ_Thủy_4BT_6BT:{e:{o:15.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8100 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Động_Cơ_Thủy_6CT_6L:{e:{o:24.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Động_Cơ_Thủy_KTA19:{e:{o:50.0},c:[{n:"Castrol TLX Plus 4040",r:1}],v:[{n:"Valvoline PremBlue 7800 Plus",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Động_Cơ_Thủy_KTA38:{e:{o:110.0},c:[{n:"Castrol TLX Plus 4040",r:1}],v:[{n:"Valvoline PremBlue 7800 Plus",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Động_Cơ_Thủy_KTA50:{e:{o:150.0},c:[{n:"Castrol TLX Plus 4040",r:1}],v:[{n:"Valvoline PremBlue 7800 Plus",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Động_Cơ_Thủy_4BT_6BT:{e:{o:15.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8100 15W-40",r:1}]},
+            Động_Cơ_Thủy_6CT_6L:{e:{o:24.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]},
+            Động_Cơ_Thủy_KTA19:{e:{o:50.0},c:[{n:"Castrol TLX Plus 4040",r:1}],v:[{n:"Valvoline PremBlue 7800 Plus",r:1}]},
+            Động_Cơ_Thủy_KTA38:{e:{o:110.0},c:[{n:"Castrol TLX Plus 4040",r:1}],v:[{n:"Valvoline PremBlue 7800 Plus",r:1}]},
+            Động_Cơ_Thủy_KTA50:{e:{o:150.0},c:[{n:"Castrol TLX Plus 4040",r:1}],v:[{n:"Valvoline PremBlue 7800 Plus",r:1}]}
         }},
+
+        /* --- YANMAR MARINE (Inboard) --- */
         YANMAR_INBOARD:{models:{
-            Động_Cơ_Thủy_4CHE_6CHE:{e:{o:25.0},c:[{n:"Castrol CRB Turbomax 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Động_Cơ_Thủy_6HY_6AY:{e:{o:60.0},c:[{n:"Castrol TLX Plus 3040",r:1}],v:[{n:"Valvoline Marine 40 PLUS",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Động_Cơ_Thủy_4CHE_6CHE:{e:{o:25.0},c:[{n:"Castrol CRB Turbomax 20W-50",r:1}],v:[{n:"Valvoline All-Fleet Extra 20W-50",r:1}]},
+            Động_Cơ_Thủy_6HY_6AY:{e:{o:60.0},c:[{n:"Castrol TLX Plus 3040",r:1}],v:[{n:"Valvoline Marine 40 PLUS",r:1}]}
         }},
+
+        /* --- MITSUBISHI MARINE --- */
         MITSUBISHI_MARINE:{models:{
-            Động_Cơ_Thủy_S6R_S6R2:{e:{o:60.0},c:[{n:"Castrol TLX Plus 4040",r:1}],v:[{n:"Valvoline PremBlue 7800 Plus",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Động_Cơ_Thủy_S12R_S16R:{e:{o:180.0},c:[{n:"Castrol TLX Plus 4040",r:1}],v:[{n:"Valvoline PremBlue 7800 Plus",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Động_Cơ_Thủy_S6R_S6R2:{e:{o:60.0},c:[{n:"Castrol TLX Plus 4040",r:1}],v:[{n:"Valvoline PremBlue 7800 Plus",r:1}]},
+            Động_Cơ_Thủy_S12R_S16R:{e:{o:180.0},c:[{n:"Castrol TLX Plus 4040",r:1}],v:[{n:"Valvoline PremBlue 7800 Plus",r:1}]}
         }},
+
+        /* --- VOLVO PENTA (Châu Âu) --- */
         VOLVO_PENTA:{models:{
-            Động_Cơ_Thủy_D1_D2_D3:{e:{o:8.5},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Động_Cơ_Thủy_D4_D6_D8:{e:{o:15.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Động_Cơ_Thủy_D11_D13_D16:{e:{o:45.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Động_Cơ_Thủy_D1_D2_D3:{e:{o:8.5},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}]},
+            Động_Cơ_Thủy_D4_D6_D8:{e:{o:15.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}]},
+            Động_Cơ_Thủy_D11_D13_D16:{e:{o:45.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}]}
         }},
+
+        /* --- WEICHAI & BAUDOUIN --- */
         WEICHAI_MARINE:{models:{
-            Động_Cơ_Thủy_WP4_WP6:{e:{o:12.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Động_Cơ_Thủy_WP10_WP12:{e:{o:28.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Động_Cơ_Thủy_Baudouin_6M26:{e:{o:50.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Động_Cơ_Thủy_WP4_WP6:{e:{o:12.0},c:[{n:"Castrol CRB Turbomax 15W-40",r:1}],v:[{n:"Valvoline All-Fleet Plus 15W-40",r:1}]},
+            Động_Cơ_Thủy_WP10_WP12:{e:{o:28.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]},
+            Động_Cơ_Thủy_Baudouin_6M26:{e:{o:50.0},c:[{n:"Castrol VECTON 15W-40",r:1}],v:[{n:"Valvoline Premium Blue 8400 15W-40",r:1}]}
         }},
+
+        /* --- CATERPILLAR & MTU --- */
         CATERPILLAR_MARINE:{models:{
-            Động_Cơ_Thủy_CAT_C7_C9:{e:{o:28.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Động_Cơ_Thủy_CAT_3512_3516:{e:{o:150.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Động_Cơ_Thủy_CAT_C7_C9:{e:{o:28.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}]},
+            Động_Cơ_Thủy_CAT_3512_3516:{e:{o:150.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}]}
         }},
         MTU_MARINE:{models:{
-            Động_Cơ_Thủy_Series_2000:{e:{o:70.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]},
-            Động_Cơ_Thủy_Series_4000:{e:{o:200.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}],vt:[{n:"Voltronic HC7 5W-30",r:1}]}
+            Động_Cơ_Thủy_Series_2000:{e:{o:70.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}]},
+            Động_Cơ_Thủy_Series_4000:{e:{o:200.0},c:[{n:"Castrol VECTON 15W-40 CK-4",r:1}],v:[{n:"Valvoline Premium Blue 8600 15W-40",r:1}]}
         }}
+
     }}
 };
+
+// ==================== TỰ ĐỘNG PHÂN BỔ 4 HÃNG MỚI VÀO DB ĐỂ KHÔNG PHẢI SỬA DB CŨ ====================
+Object.keys(DB).forEach(function(catKey){
+    Object.keys(DB[catKey].brands).forEach(function(br){
+        Object.keys(DB[catKey].brands[br].models).forEach(function(mo){
+            var md = DB[catKey].brands[br].models[mo];
+            
+            md.vo = []; md.vo_gear = [];
+            md.wo = []; md.wo_gear = [];
+            md.id = []; md.id_gear = [];
+            md.ki = []; md.ki_gear = [];
+
+            // 1. Phân bổ Ô tô
+            if(catKey === 'oto') {
+                if(['TOYOTA', 'HONDA', 'MAZDA', 'MITSUBISHI'].indexOf(br) > -1) {
+                    md.id.push({n:"Idemitsu IFG5 5W-30",r:1});
+                    md.id_gear.push({n:"Idemitsu ATF",r:1});
+                }
+                if(['HYUNDAI', 'KIA'].indexOf(br) > -1) {
+                    md.ki.push({n:"Kixx G1 5W-30 SP",r:1});
+                    md.ki.push({n:"Kixx PAO1 0W-30",r:0});
+                    md.ki_gear.push({n:"Kixx ATF DX-III",r:1});
+                }
+                if(['MERCEDES_BENZ', 'BMW', 'AUDI', 'PORSCHE', 'LAND_ROVER'].indexOf(br) > -1) {
+                    md.vo.push({n:"Voltronic Touring Turbo 5W-40",r:1});
+                    md.wo.push({n:"Wolver SuperTec 5W-40",r:1});
+                }
+                // Phụ gia khuyến nghị cho tất cả Ô tô
+                md.vo.push({n:"Voltronic G20 Engine Flush",r:0});
+                md.vo.push({n:"Voltronic G17 Petrol Additive",r:0});
+                md.wo.push({n:"Wolver Motor Flush",r:0});
+                if(!md.wo_gear.length) md.wo_gear.push({n:"Wolver Super Fluid ATF",r:0});
+            }
+            
+            // 2. Phân bổ Xe máy
+            if(catKey === 'xemay') {
+                if(['HONDA', 'YAMAHA', 'SUZUKI'].indexOf(br) > -1) {
+                    md.id.push({n:"Idemitsu IRG5 10W-40 MA2",r:1});
+                    md.ki.push({n:"Kixx Ultra 4T 10W-40",r:1});
+                    if (mo.indexOf('Vision')>-1 || mo.indexOf('SH')>-1 || mo.indexOf('Air_Blade')>-1 || mo.indexOf('NVX')>-1 || mo.indexOf('Grande')>-1) {
+                        md.id.push({n:"Idemitsu Scooter 10W-40 MB",r:1});
+                    }
+                }
+                if(['KAWASAKI', 'DUCATI', 'TRIUMPH'].indexOf(br) > -1 || mo.indexOf('SH_350i') > -1 || mo.indexOf('Exciter') > -1 || mo.indexOf('Winner') > -1) {
+                    md.vo.push({n:"Voltronic Granturismo 4T",r:1});
+                    md.wo.push({n:"Wolver Four Stroke 4T 10W-40",r:1});
+                }
+                md.vo.push({n:"Voltronic G17 Petrol Additive",r:0});
+            }
+            
+            // 3. Xe tải, thương mại, công trình, nông nghiệp
+            if(['xetai', 'thuongmai', 'congtrinh', 'nongnghiep', 'hanghai'].indexOf(catKey) > -1) {
+                md.id.push({n:"Idemitsu Diesel 15W-40",r:1});
+                md.ki.push({n:"Kixx HD1 15W-40",r:1});
+                md.wo.push({n:"Wolver Turbo Truck 15W-40",r:1});
+                if(catKey === 'nongnghiep' || catKey === 'congtrinh' || catKey === 'xetai') {
+                    md.vo_gear.push({n:"Voltronic 80W90 Gear Oil",r:1});
+                }
+            }
+            
+            // 4. Máy công nghiệp
+            if(catKey === 'congnghiep') {
+                md.wo.push({n:"Wolver Super Fluid ATF", r:1});
+                md.ki_gear.push({n:"Kixx ATF DX-III", r:1});
+            }
+
+            // Dọn dẹp mảng rỗng để không bị lỗi hiển thị
+            if(md.vo.length===0) delete md.vo;
+            if(md.vo_gear.length===0) delete md.vo_gear;
+            if(md.wo.length===0) delete md.wo;
+            if(md.wo_gear.length===0) delete md.wo_gear;
+            if(md.id.length===0) delete md.id;
+            if(md.id_gear.length===0) delete md.id_gear;
+            if(md.ki.length===0) delete md.ki;
+            if(md.ki_gear.length===0) delete md.ki_gear;
+        });
+    });
+});
 
 // ==================== BUILD ALLP ====================
 var ALLP = (function(){
@@ -1176,8 +1406,15 @@ var ALLP = (function(){
                 if(md.c_gear) md.c_gear.forEach(function(p){add(p.n,br,mo,catKey,cat.label);});
                 if(md.v) md.v.forEach(function(p){add(p.n,br,mo,catKey,cat.label);});
                 if(md.v_gear) md.v_gear.forEach(function(p){add(p.n,br,mo,catKey,cat.label);});
-                if(md.vt) md.vt.forEach(function(p){add(p.n,br,mo,catKey,cat.label);});
-                if(md.vt_gear) md.vt_gear.forEach(function(p){add(p.n,br,mo,catKey,cat.label);});
+                // Thêm 4 hãng mới
+                if(md.vo) md.vo.forEach(function(p){add(p.n,br,mo,catKey,cat.label);});
+                if(md.vo_gear) md.vo_gear.forEach(function(p){add(p.n,br,mo,catKey,cat.label);});
+                if(md.wo) md.wo.forEach(function(p){add(p.n,br,mo,catKey,cat.label);});
+                if(md.wo_gear) md.wo_gear.forEach(function(p){add(p.n,br,mo,catKey,cat.label);});
+                if(md.id) md.id.forEach(function(p){add(p.n,br,mo,catKey,cat.label);});
+                if(md.id_gear) md.id_gear.forEach(function(p){add(p.n,br,mo,catKey,cat.label);});
+                if(md.ki) md.ki.forEach(function(p){add(p.n,br,mo,catKey,cat.label);});
+                if(md.ki_gear) md.ki_gear.forEach(function(p){add(p.n,br,mo,catKey,cat.label);});
             });
         });
     });
@@ -1247,31 +1484,36 @@ function popModels(){
 function popReverse() {
     var rs = document.getElementById('reverseProductSelect');
     if (!rs) return;
+
     while (rs.options.length > 1) rs.remove(1);
-    var sortedProds = ALLP.slice().sort(function(a, b) {
-        return a.name.localeCompare(b.name);
-    });
+    var sortedProds = ALLP.slice().sort(function(a, b) { return a.name.localeCompare(b.name); });
+
     var groups = {
         "Dầu nhớt Ô tô du lịch": [],
         "Dầu nhớt Xe máy": [],
         "Dầu tải nặng & Thương mại": [],
         "Hộp số, Cầu & Xe điện": [],
-        "Phụ gia & Sản phẩm khác": []
+        "Phụ gia & Chăm sóc xe": [],
+        "Sản phẩm khác": []
     };
+
     sortedProds.forEach(function(p) {
         var n = p.name.toUpperCase();
-        if (n.includes('EDGE') || n.includes('MAGNATEC') || n.includes('GTX') || n.includes('MODERN') || n.includes('SYNPOWER') || n.includes('SYN 0W') || n.includes('HC7') || n.includes('MOLY') || n.includes('TURBO PLUS') || n.includes('HYBRID') || n.includes('ENERGY PLUS') || n.includes('CRDI')) {
+        if (n.includes('FLUSH') || n.includes('ADDITIVE')) {
+            groups["Phụ gia & Chăm sóc xe"].push(p);
+        } else if (n.includes('EDGE') || n.includes('MAGNATEC') || n.includes('GTX') || n.includes('MODERN') || n.includes('SYNPOWER') || n.includes('TOURING') || n.includes('SUPERTEC') || n.includes('IFG') || n.includes('G1') || n.includes('PAO1')) {
             groups["Dầu nhớt Ô tô du lịch"].push(p);
-        } else if (n.includes('POWER1') || n.includes('ACTIV') || n.includes('SCOOTER') || n.includes(' 4T') || n.includes(' 2T') || n.includes('MOTO 4T') || n.includes('SCOOTER 4T')) {
+        } else if (n.includes('POWER1') || n.includes('ACTIV') || n.includes('SCOOTER') || n.includes(' 4T') || n.includes(' 2T') || n.includes('GRANTURISMO') || n.includes('IRG')) {
             groups["Dầu nhớt Xe máy"].push(p);
-        } else if (n.includes('CRB') || n.includes('VECTON') || n.includes('ALL-FLEET') || n.includes('BLUE')) {
+        } else if (n.includes('CRB') || n.includes('VECTON') || n.includes('ALL-FLEET') || n.includes('BLUE') || n.includes('TRUCK') || n.includes('DIESEL') || n.includes('HD1')) {
             groups["Dầu tải nặng & Thương mại"].push(p);
-        } else if (n.includes('TRANSMAX') || n.includes('GEAR') || n.includes('ATF') || n.includes('CVT') || n.includes(' EV ')) {
+        } else if (n.includes('TRANSMAX') || n.includes('GEAR') || n.includes('ATF') || n.includes('CVT') || n.includes(' EV ') || n.includes('FLUID')) {
             groups["Hộp số, Cầu & Xe điện"].push(p);
         } else {
-            groups["Phụ gia & Sản phẩm khác"].push(p);
+            groups["Sản phẩm khác"].push(p);
         }
     });
+
     Object.keys(groups).forEach(function(groupName) {
         if (groups[groupName].length > 0) {
             var groupEl = document.createElement('optgroup');
@@ -1287,6 +1529,53 @@ function popReverse() {
     });
 }
 
+function makeProductCard(p, defCap, catalog, brandKey, themeColor, logoSrc, brand, model, catLabel) {
+    var cap = (p.c !== undefined) ? p.c : defCap;
+    var info = catalog[p.n] || {};
+    
+    var h='<div class="product-block '+(p.r?'recommended ':'')+'" style="border-color:'+(p.r?themeColor:'var(--gray-200)')+'; border-width:'+(p.r?'2px':'1.5px')+'">';
+    if(p.r) h+='<div class="recommend-badge" style="background:'+themeColor+'">★ Khuyến nghị</div>';
+    h+='<div class="product-inner">';
+    
+    var wrapBg = '';
+    if(brandKey==='castrol') wrapBg = 'linear-gradient(160deg, #E8F5EE 0%, #C8E6D3 100%)';
+    else if(brandKey==='valvoline') wrapBg = 'linear-gradient(160deg, #EEF2FF 0%, #DBEAFE 100%)';
+    else if(brandKey==='voltronic') wrapBg = 'linear-gradient(160deg, #E6F0FA 0%, #B3D4F5 100%)';
+    else if(brandKey==='wolver') wrapBg = 'linear-gradient(160deg, #FADCE0 0%, #F5B8C0 100%)';
+    else if(brandKey==='idemitsu') wrapBg = 'linear-gradient(160deg, #FAE1E4 0%, #F5C2C8 100%)';
+    else if(brandKey==='kixx') wrapBg = 'linear-gradient(160deg, #FCEEE6 0%, #FAD1B8 100%)';
+
+    h+='<div class="product-img-wrap" style="background:'+wrapBg+'"><div class="brand-icon-wrap" style="border:1.5px solid '+themeColor+';"><img src="'+logoSrc+'"></div></div>';
+    
+    h+='<div class="product-info"><div class="product-name'+(p.r?' recommended-pad':'')+'">'+p.n+'</div>';
+    if(info.s) h+='<div class="product-spec">'+info.s+'</div>';
+    h+='<div class="product-cap"><span>Khuyến nghị:</span><strong style="color:'+themeColor+'">'+cap+'</strong></div>';
+    h+='<div style="display:flex;gap:8px;">';
+    h+='<button class="btn-detail" style="background:'+themeColor+';color:white;" data-name="'+p.n+'" data-brandkey="'+brandKey+'" data-cap="'+cap+'" data-brand="'+brand+'" data-model="'+model+'" data-cat="'+catLabel+'" data-catkey="'+curCat+'">CHI TIẾT</button>';
+    var hrefLink=info.u?info.u:'javascript:void(0)';
+    var targetAttr=info.u?'target="_blank"':'';
+    h+='<a href="'+hrefLink+'" '+targetAttr+' class="btn-detail" style="background:#111;color:white;border-color:transparent;text-decoration:none;">MUA NGAY</a>';
+    h+='</div></div></div></div>';
+    return h;
+}
+
+function renderBrandSection(brandKey, brandName, logoSrc, themeColor, mdEngine, mdGear, defCap, catalog, brand, model, catLabel) {
+    if((!mdEngine || mdEngine.length===0) && (!mdGear || mdGear.length===0)) return '';
+    
+    var h = '<div class="brand-card"><div class="brand-card-head" style="background:'+themeColor+'"><div class="brand-logo-badge"><img src="'+logoSrc+'" alt="'+brandName+'"></div><div><div class="brand-head-title">'+brandName+'</div><div class="brand-head-sub">Khuyến nghị chính hãng</div></div></div><div class="brand-card-body">';
+    
+    if(mdEngine && mdEngine.length>0){
+        h += '<div class="alt-heading" style="color:'+themeColor+';margin-bottom:8px;">SẢN PHẨM KHUYÊN DÙNG</div>';
+        mdEngine.forEach(function(p){ h += makeProductCard(p, defCap, catalog, brandKey, themeColor, logoSrc, brand, model, catLabel); });
+    }
+    if(mdGear && mdGear.length>0){
+        h += '<div class="alt-heading" style="color:'+themeColor+';margin-top:20px;margin-bottom:8px;">HỆ TRUYỀN ĐỘNG / THỦY LỰC / KHÁC</div>';
+        mdGear.forEach(function(p){ h += makeProductCard(p, p.c||'Tùy chọn', catalog, brandKey, themeColor, logoSrc, brand, model, catLabel); });
+    }
+    h += '</div></div>';
+    return h;
+}
+
 function search(){
     var brand=document.getElementById('brandSelect').value;
     var model=document.getElementById('modelSelect').value;
@@ -1294,13 +1583,14 @@ function search(){
     var rg=document.getElementById('resultsGrid');
     var isVehicle = ['oto','xemay','xetai','thuongmai'].indexOf(curCat) >= 0;
     var itemType = isVehicle ? 'dòng xe' : 'dòng máy';
+    
     if(!brand||!model){
-        rg.innerHTML='<div class="no-result" style="grid-column:span 3;font-size:14px;">Vui lòng chọn <strong>Hãng</strong> và <strong>'+itemType+'</strong>.</div>';
+        rg.innerHTML='<div class="no-result" style="grid-column:span 2;font-size:14px;">Vui lòng chọn <strong>Hãng</strong> và <strong>'+itemType+'</strong>.</div>';
         rw.style.display='block'; return;
     }
     var catData=DB[curCat];
     if(!catData||!catData.brands[brand]||!catData.brands[brand].models[model]){
-        rg.innerHTML='<div class="no-result" style="grid-column:span 3;">Không có dữ liệu cho lựa chọn này.</div>';
+        rg.innerHTML='<div class="no-result" style="grid-column:span 2;">Không có dữ liệu cho lựa chọn này.</div>';
         rw.style.display='block'; return;
     }
     var modelDisplay=model.replace(/_/g,' ');
@@ -1311,6 +1601,7 @@ function search(){
     document.getElementById('step3').className='step-item done';
     document.getElementById('step4').className='step-item active';
     var md=catData.brands[brand].models[model];
+    
     var oc='N/A';
     if(md.e && md.e.o !== undefined){
         if(md.e.o===0) oc='Không dùng';
@@ -1321,88 +1612,34 @@ function search(){
     document.getElementById('resultsTitle').textContent='Đề xuất cho '+brand.replace(/_/g,' ')+' '+modelDisplay;
     document.getElementById('resultsSubtitle').textContent=catLabel+(yr?' — Năm '+yr:'')+'  · Thông số tiêu chuẩn tham khảo';
 
-    function makeProductCard(p, defCap, catalog, brandKey, brand, model, catLabel){
-        var cap=(p.c!==undefined)?p.c:defCap;
-        var info=catalog[p.n]||{};
-        var cls;
-        var brandLogoSrc;
-        var iconClass;
-        var wrapClass;
-        var blockClass;
-        var buyBtnBg;
-        if(brandKey==='c'){
-            cls='c'; brandLogoSrc=CASTROL_LOGO; iconClass='castrol-icon'; wrapClass='castrol-wrap-prod'; blockClass='castrol-prod'; buyBtnBg='#009F4D';
-        } else if(brandKey==='v'){
-            cls='v'; brandLogoSrc=VALVOLINE_LOGO; iconClass='valvoline-icon'; wrapClass='valvoline-wrap-prod'; blockClass='valvoline-prod'; buyBtnBg='#003087';
-        } else {
-            cls='vt'; brandLogoSrc=VOLTRONIC_LOGO; iconClass='voltronic-icon'; wrapClass='voltronic-wrap-prod'; blockClass='voltronic-prod'; buyBtnBg='#0054A6';
-        }
-        var h='<div class="product-block '+(p.r?'recommended ':'')+blockClass+'">';
-        if(p.r) h+='<div class="recommend-badge '+(brandKey==='c'?'castrol-badge':(brandKey==='v'?'valvoline-badge':'voltronic-badge'))+'">★ Khuyến nghị</div>';
-        h+='<div class="product-inner"><div class="product-img-wrap '+wrapClass+'"><div class="brand-icon-wrap '+iconClass+'"><img src="'+brandLogoSrc+'"></div></div>';
-        h+='<div class="product-info"><div class="product-name'+(p.r?' recommended-pad':'')+'">'+p.n+'</div>';
-        if(info.s) h+='<div class="product-spec">'+info.s+'</div>';
-        h+='<div class="product-cap"><span>Khuyến nghị:</span><strong class="'+cls+'">'+cap+'</strong></div>';
-        h+='<div style="display:flex;gap:8px;">';
-        h+='<button class="btn-detail '+cls+'" data-name="'+p.n+'" data-brandkey="'+brandKey+'" data-cap="'+cap+'" data-brand="'+brand+'" data-model="'+model+'" data-cat="'+catLabel+'" data-catkey="'+curCat+'">Chi tiết</button>';
-        var hrefLink=info.u?info.u:'javascript:void(0)';
-        var targetAttr=info.u?'target="_blank"':'';
-        h+='<a href="'+hrefLink+'" '+targetAttr+' class="btn-detail" style="background:'+buyBtnBg+';color:white;border-color:transparent;text-decoration:none;">MUA NGAY</a>';
-        h+='</div></div></div></div>';
-        return h;
-    }
-
     var h='';
-    // CASTROL
-    h+='<div class="brand-card"><div class="brand-card-head castrol"><div class="brand-logo-badge"><img src="'+CASTROL_LOGO+'" alt="Castrol"></div><div><div class="brand-head-title">Castrol</div><div class="brand-head-sub">Khuyến nghị chính hãng</div></div></div><div class="brand-card-body">';
-    if((md.c&&md.c.length>0)||(md.c_gear&&md.c_gear.length>0)){
-        if(md.c&&md.c.length>0){
-            h+='<div class="alt-heading" style="color:var(--castrol-green);margin-bottom:8px;">DẦU ĐỘNG CƠ (ENGINE OIL)</div>';
-            md.c.forEach(function(p){h+=makeProductCard(p,oc,CASTROL_CATALOG,'c',brand,model,catLabel);});
-        }
-        if(md.c_gear&&md.c_gear.length>0){
-            h+='<div class="alt-heading" style="color:var(--castrol-green);margin-top:20px;margin-bottom:8px;">TRUYỀN ĐỘNG & THỦY LỰC</div>';
-            md.c_gear.forEach(function(p){h+=makeProductCard(p,p.c||'Tùy chọn',CASTROL_CATALOG,'c',brand,model,catLabel);});
-        }
-    } else h+='<div class="no-result">Không có dữ liệu</div>';
-    h+='</div></div>';
+    h += renderBrandSection('castrol', 'Castrol', CASTROL_LOGO, '#1A7A3C', md.c, md.c_gear, oc, CASTROL_CATALOG, brand, model, catLabel);
+    h += renderBrandSection('valvoline', 'Valvoline', VALVOLINE_LOGO, '#003087', md.v, md.v_gear, oc, VALVOLINE_CATALOG, brand, model, catLabel);
+    h += renderBrandSection('voltronic', 'Voltronic', VOLTRONIC_LOGO, '#00509E', md.vo, md.vo_gear, oc, VOLTRONIC_CATALOG, brand, model, catLabel);
+    h += renderBrandSection('wolver', 'Wolver', WOLVER_LOGO, '#C8102E', md.wo, md.wo_gear, oc, WOLVER_CATALOG, brand, model, catLabel);
+    h += renderBrandSection('idemitsu', 'Idemitsu', IDEMITSU_LOGO, '#E50012', md.id, md.id_gear, oc, IDEMITSU_CATALOG, brand, model, catLabel);
+    h += renderBrandSection('kixx', 'Kixx', KIXX_LOGO, '#EA5B0C', md.ki, md.ki_gear, oc, KIXX_CATALOG, brand, model, catLabel);
 
-    // VALVOLINE
-    h+='<div class="brand-card"><div class="brand-card-head valvoline"><div class="brand-logo-badge"><img src="'+VALVOLINE_LOGO+'" alt="Valvoline"></div><div><div class="brand-head-title">Valvoline</div><div class="brand-head-sub">Khuyến nghị chính hãng</div></div></div><div class="brand-card-body">';
-    if((md.v&&md.v.length>0)||(md.v_gear&&md.v_gear.length>0)){
-        if(md.v&&md.v.length>0){
-            h+='<div class="alt-heading" style="color:var(--blue);margin-bottom:8px;">DẦU ĐỘNG CƠ (ENGINE OIL)</div>';
-            md.v.forEach(function(p){h+=makeProductCard(p,oc,VALVOLINE_CATALOG,'v',brand,model,catLabel);});
-        }
-        if(md.v_gear&&md.v_gear.length>0){
-            h+='<div class="alt-heading" style="color:var(--blue);margin-top:20px;margin-bottom:8px;">TRUYỀN ĐỘNG & THỦY LỰC</div>';
-            md.v_gear.forEach(function(p){h+=makeProductCard(p,p.c||'Tùy chọn',VALVOLINE_CATALOG,'v',brand,model,catLabel);});
-        }
-    } else h+='<div class="no-result">Không có dữ liệu</div>';
-    h+='</div></div>';
-
-    // VOLTRONIC
-    h+='<div class="brand-card"><div class="brand-card-head voltronic"><div class="brand-logo-badge"><img src="'+VOLTRONIC_LOGO+'" alt="Voltronic"></div><div><div class="brand-head-title">Voltronic</div><div class="brand-head-sub">Khuyến nghị chính hãng</div></div></div><div class="brand-card-body">';
-    if((md.vt&&md.vt.length>0)||(md.vt_gear&&md.vt_gear.length>0)){
-        if(md.vt&&md.vt.length>0){
-            h+='<div class="alt-heading" style="color:var(--voltronic-blue);margin-bottom:8px;">DẦU ĐỘNG CƠ (ENGINE OIL)</div>';
-            md.vt.forEach(function(p){h+=makeProductCard(p,oc,VOLTRONIC_CATALOG,'vt',brand,model,catLabel);});
-        }
-        if(md.vt_gear&&md.vt_gear.length>0){
-            h+='<div class="alt-heading" style="color:var(--voltronic-blue);margin-top:20px;margin-bottom:8px;">TRUYỀN ĐỘNG & THỦY LỰC</div>';
-            md.vt_gear.forEach(function(p){h+=makeProductCard(p,p.c||'Tùy chọn',VOLTRONIC_CATALOG,'vt',brand,model,catLabel);});
-        }
-    } else h+='<div class="no-result">Không có dữ liệu</div>';
-    h+='</div></div>';
-
+    if(h === '') h='<div class="no-result" style="grid-column:span 2;">Đang cập nhật dữ liệu.</div>';
+    
     rg.innerHTML=h;
     rw.style.display='block';
     document.getElementById('resultsAnchor').scrollIntoView({behavior:'smooth'});
+    
     rg.querySelectorAll('.btn-detail[data-name]').forEach(function(btn){
         btn.addEventListener('click',function(){
-            showDetail(this.dataset.name,this.dataset.brandkey,this.dataset.cap,this.dataset.brand,this.dataset.model,this.dataset.cat,this.dataset.catkey);
+            showDetail(this.dataset.name, this.dataset.brandkey, this.dataset.cap, this.dataset.brand, this.dataset.model, this.dataset.cat, this.dataset.catkey);
         });
     });
+}
+
+function getBrandKeyFromProduct(pn) {
+    if(pn.includes("Voltronic")) return 'voltronic';
+    if(pn.includes("Wolver")) return 'wolver';
+    if(pn.includes("Idemitsu")) return 'idemitsu';
+    if(pn.includes("Kixx")) return 'kixx';
+    if(pn.includes("Valvoline")) return 'valvoline';
+    return 'castrol';
 }
 
 function revSearch(){
@@ -1413,43 +1650,39 @@ function revSearch(){
     for(var i=0;i<ALLP.length;i++){if(ALLP[i].name===pn){found=ALLP[i];break;}}
     if(!found||!found.vehicles.length){rr.innerHTML='<span style="color:#999">Không tìm thấy phương tiện phù hợp.</span>';rr.style.display='block';return;}
     
-    var isCastrol = pn.toLowerCase().includes('castrol');
-    var isValvoline = pn.toLowerCase().includes('valvoline');
-    var brandKey = isCastrol ? 'c' : (isValvoline ? 'v' : 'vt');
-    var catalog = isCastrol ? CASTROL_CATALOG : (isValvoline ? VALVOLINE_CATALOG : VOLTRONIC_CATALOG);
-    var info = catalog[pn] || {};
-    var cls = brandKey;
-    var brandLogoSrc = isCastrol ? CASTROL_LOGO : (isValvoline ? VALVOLINE_LOGO : VOLTRONIC_LOGO);
-    var wrapClass = isCastrol ? 'castrol-wrap-prod' : (isValvoline ? 'valvoline-wrap-prod' : 'voltronic-wrap-prod');
-    var iconClass = isCastrol ? 'castrol-icon' : (isValvoline ? 'valvoline-icon' : 'voltronic-icon');
-    var blockClass = isCastrol ? 'castrol-prod' : (isValvoline ? 'valvoline-prod' : 'voltronic-prod');
-    var buyBtnBg = isCastrol ? '#009F4D' : (isValvoline ? '#003087' : '#0054A6');
+    var brandKey = getBrandKeyFromProduct(pn);
+    var catalog, themeColor, logoSrc;
+    if(brandKey==='castrol') { catalog=CASTROL_CATALOG; themeColor='#1A7A3C'; logoSrc=CASTROL_LOGO; }
+    else if(brandKey==='valvoline') { catalog=VALVOLINE_CATALOG; themeColor='#003087'; logoSrc=VALVOLINE_LOGO; }
+    else if(brandKey==='voltronic') { catalog=VOLTRONIC_CATALOG; themeColor='#00509E'; logoSrc=VOLTRONIC_LOGO; }
+    else if(brandKey==='wolver') { catalog=WOLVER_CATALOG; themeColor='#C8102E'; logoSrc=WOLVER_LOGO; }
+    else if(brandKey==='idemitsu') { catalog=IDEMITSU_CATALOG; themeColor='#E50012'; logoSrc=IDEMITSU_LOGO; }
+    else if(brandKey==='kixx') { catalog=KIXX_CATALOG; themeColor='#EA5B0C'; logoSrc=KIXX_LOGO; }
 
+    var info = catalog[pn] || {};
     var h = '';
-    h += '<div class="product-block '+blockClass+'" style="margin-bottom:20px;">';
+    h += '<div class="product-block" style="margin-bottom:20px; border:1.5px solid '+themeColor+';">';
     h += '<div class="product-inner">';
-    h += '<div class="product-img-wrap '+wrapClass+'"><div class="brand-icon-wrap '+iconClass+'"><img src="'+brandLogoSrc+'"></div></div>';
+    h += '<div class="product-img-wrap" style="background:var(--gray-100)"><div class="brand-icon-wrap" style="border:1.5px solid '+themeColor+';"><img src="'+logoSrc+'"></div></div>';
     h += '<div class="product-info">';
     h += '<div class="product-name" style="margin-top:0;">'+pn+'</div>';
     if(info.s) h += '<div class="product-spec">'+info.s+'</div>';
     if(info.adv) h += '<div class="product-spec" style="color:#555;">'+info.adv+'</div>';
     h += '<div style="display:flex;gap:8px;margin-top:10px;">';
-    h += '<button class="btn-detail '+cls+' rev-detail-btn" data-name="'+pn+'" data-brandkey="'+brandKey+'">CHI TIẾT</button>';
+    h += '<button class="btn-detail rev-detail-btn" style="background:'+themeColor+';color:white;" data-name="'+pn+'" data-brandkey="'+brandKey+'">CHI TIẾT</button>';
     var hrefLink = info.u ? info.u : 'javascript:void(0)';
     var targetAttr = info.u ? 'target="_blank"' : '';
-    h += '<a href="'+hrefLink+'" '+targetAttr+' class="btn-detail" style="background:'+buyBtnBg+';color:white;border-color:transparent;text-decoration:none;">MUA NGAY</a>';
+    h += '<a href="'+hrefLink+'" '+targetAttr+' class="btn-detail" style="background:#111;color:white;border-color:transparent;text-decoration:none;">MUA NGAY</a>';
     h += '</div></div></div></div>';
 
-    h += '<div class="rv-title" style="margin-bottom: 8px;">PHƯƠNG TIỆN SỬ DỤNG SẢN PHẨM NÀY:</div>';
+    h += '<div class="rv-title" style="margin-bottom: 8px; color:'+themeColor+'">PHƯƠNG TIỆN SỬ DỤNG SẢN PHẨM NÀY:</div>';
     h += '<ul style="max-height:250px;overflow-y:auto;padding-right:10px;margin:0;list-style:none;">';
     found.vehicles.forEach(function(v){
         h += '<li style="margin-bottom:6px; color:#444;">['+v.label+'] <strong style="color:#111;">'+v.brand.replace(/_/g,' ')+'</strong> '+v.model.replace(/_/g,' ')+'</li>';
     });
     h += '</ul>';
 
-    rr.classList.remove('valvoline-theme','voltronic-theme');
-    if(isValvoline){ rr.classList.add('valvoline-theme'); }
-    else if(!isCastrol){ rr.classList.add('voltronic-theme'); }
+    rr.style.borderLeft = '4px solid ' + themeColor;
     rr.innerHTML = h;
     rr.style.display = 'block';
 
@@ -1461,37 +1694,34 @@ function revSearch(){
     }
 }
 
-function showDetail(name,brandKey,cap,brandName,modelName,catLabel,catKey){
-    var catalog;
-    var cls;
-    var brandLogoSrc;
-    var iconWrapClass;
-    var capClass;
-    if(brandKey==='c'){
-        catalog=CASTROL_CATALOG; cls='c'; brandLogoSrc=CASTROL_LOGO; iconWrapClass='castrol-wrap-modal'; capClass='';
-    } else if(brandKey==='v'){
-        catalog=VALVOLINE_CATALOG; cls='v'; brandLogoSrc=VALVOLINE_LOGO; iconWrapClass='valvoline-wrap-modal'; capClass='v-cap';
-    } else {
-        catalog=VOLTRONIC_CATALOG; cls='vt'; brandLogoSrc=VOLTRONIC_LOGO; iconWrapClass='voltronic-wrap-modal'; capClass='vt-cap';
-    }
-    var info=catalog[name]||{s:'Đang cập nhật',adv:'Đang cập nhật',app:'Đang cập nhật'};
+function showDetail(name, brandKey, cap, brandName, modelName, catLabel, catKey) {
+    var catalog, themeColor, logoSrc;
+    if(brandKey==='castrol') { catalog=CASTROL_CATALOG; themeColor='#1A7A3C'; logoSrc=CASTROL_LOGO; }
+    else if(brandKey==='valvoline') { catalog=VALVOLINE_CATALOG; themeColor='#003087'; logoSrc=VALVOLINE_LOGO; }
+    else if(brandKey==='voltronic') { catalog=VOLTRONIC_CATALOG; themeColor='#00509E'; logoSrc=VOLTRONIC_LOGO; }
+    else if(brandKey==='wolver') { catalog=WOLVER_CATALOG; themeColor='#C8102E'; logoSrc=WOLVER_LOGO; }
+    else if(brandKey==='idemitsu') { catalog=IDEMITSU_CATALOG; themeColor='#E50012'; logoSrc=IDEMITSU_LOGO; }
+    else if(brandKey==='kixx') { catalog=KIXX_CATALOG; themeColor='#EA5B0C'; logoSrc=KIXX_LOGO; }
+
+    var info = catalog[name] || {s:'Đang cập nhật', adv:'Đang cập nhật', app:'Đang cập nhật'};
     var catIconSrc = CAT_ICONS[catKey] || CAT_ICONS['oto'];
-    var specPills=info.s?info.s.split('·').map(function(s){return s.trim();}).filter(Boolean):[];
-    var mb=document.getElementById('modalBox');
+    var specPills = info.s ? info.s.split('·').map(function(s){return s.trim();}).filter(Boolean) : [];
+    
+    var mb = document.getElementById('modalBox');
     
     mb.innerHTML=
-        '<div class="modal-topbar '+cls+'">'
+        '<div class="modal-topbar" style="background:'+themeColor+'">'
         +'<button class="modal-back" id="modalBack"><svg viewBox="0 0 24 24" fill="none"><path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Quay lại</button>'
-        +'<div class="modal-topbar-brand"><div class="modal-brand-logo-wrap"><img class="modal-brand-logo" src="'+brandLogoSrc+'" alt="brand"></div></div>'
+        +'<div class="modal-topbar-brand"><div class="modal-brand-logo-wrap"><img class="modal-brand-logo" src="'+logoSrc+'" alt="brand"></div></div>'
         +'</div>'
         +'<div class="modal-hero">'
-        +'<div class="modal-category-icon-wrap '+iconWrapClass+'">'
+        +'<div class="modal-category-icon-wrap" style="border-color:'+themeColor+'; background:var(--gray-100);">'
         +'<img class="modal-category-icon" src="'+catIconSrc+'" alt="'+catLabel+'">'
-        +'<span class="modal-brand-pill">'+catLabel+'</span>'
+        +'<span class="modal-brand-pill" style="color:'+themeColor+'; background:rgba(0,0,0,0.05);">'+catLabel+'</span>'
         +'</div>'
         +'<div class="modal-hero-text">'
         +'<div class="modal-product-name">'+name+'</div>'
-     +'<div class="modal-vehicle-tag">'+brandName.replace(/_/g, ' ')+' '+modelName.replace(/_/g, ' ')+'</div>'
+        +'<div class="modal-vehicle-tag">'+brandName.replace(/_/g, ' ')+' '+modelName.replace(/_/g, ' ')+'</div>'
         +'</div>'
         +'</div>'
         +'<div class="modal-content"><div class="modal-sections">'
@@ -1502,7 +1732,7 @@ function showDetail(name,brandKey,cap,brandName,modelName,catLabel,catKey){
         +'<div class="modal-section"><div class="modal-section-label">Phương tiện phù hợp</div><div class="modal-section-text">'+info.app+'</div></div>'
         +'</div>'
         +'<div class="modal-cap-box">'
-        +'<div><div class="modal-cap-label">Khuyến nghị lượng dùng</div><div class="modal-cap-value '+capClass+'" style="font-size:24px;">'+cap+'</div></div>'
+        +'<div><div class="modal-cap-label">Khuyến nghị lượng dùng</div><div class="modal-cap-value" style="font-size:24px; color:'+themeColor+'">'+cap+'</div></div>'
         +'</div>'
         +'</div>';
         
@@ -1510,13 +1740,6 @@ function showDetail(name,brandKey,cap,brandName,modelName,catLabel,catKey){
         document.getElementById('modalOverlay').style.display = 'none';
         document.body.style.overflow = 'auto'; 
         document.body.style.overflowY = 'scroll';
-    });
-    document.getElementById('modalOverlay').addEventListener('click', function(e) {
-        if (e.target.id === 'modalOverlay') {
-            this.style.display = 'none';
-            document.body.style.overflow = 'auto';
-            document.body.style.overflowY = 'scroll';
-        }
     });
     
     document.getElementById('modalOverlay').style.display='flex';
@@ -1560,6 +1783,8 @@ document.getElementById('navContainer').addEventListener('click',function(e){
 document.getElementById('brandSelect').addEventListener('change', popModels);
 document.getElementById('searchBtn').addEventListener('click', search);
 document.getElementById('reverseBtn').addEventListener('click', revSearch);
+
+// Bấm ra ngoài vùng viền đen để tắt bảng chi tiết
 document.getElementById('modalOverlay').addEventListener('click', function(e) {
     if (e.target.id === 'modalOverlay') {
         this.style.display = 'none';
